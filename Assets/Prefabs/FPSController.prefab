@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6663911166147381065}
   - component: {fileID: 6663911166147381066}
+  - component: {fileID: 3885334541653668872}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -51,6 +52,21 @@ MonoBehaviour:
   Gun_Barrel: {fileID: 6663911166642603513}
   currentBullets: 0
   maxBullets: 30
+--- !u!114 &3885334541653668872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663911166147381067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03346c474c40014c8c98bf580ab780c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  fpsCam: {fileID: 6663911167993258334}
 --- !u!1 &6663911166258963283
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +296,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
