@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour {
     	pauseMenuUI.SetActive(false);
     	Time.timeScale = 1f;
     	GameIsPaused = false;
+        Cursor.visible = false;
     }
 
     void Pause() {
@@ -43,6 +44,13 @@ public class PauseMenu : MonoBehaviour {
     	SceneManager.LoadScene("room_generator");
     	Time.timeScale = 1f;
     	GameIsPaused = false;
+    }
+
+    public void MainMenu()
+    {
+
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene("main_menu");
     }
 
     public void QuitGame() {
