@@ -82,5 +82,23 @@ PrefabInstance:
       propertyPath: openingDirection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 340714690671563790, guid: 0608bd747f149d2428d137ebeba94353,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363010297869192298, guid: 0608bd747f149d2428d137ebeba94353,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359271443082733370, guid: 0608bd747f149d2428d137ebeba94353,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3800869024274489317, guid: 0608bd747f149d2428d137ebeba94353, type: 3}
+    - {fileID: 2751232911840272299, guid: 0608bd747f149d2428d137ebeba94353, type: 3}
+    - {fileID: 7643639881739674527, guid: 0608bd747f149d2428d137ebeba94353, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0608bd747f149d2428d137ebeba94353, type: 3}

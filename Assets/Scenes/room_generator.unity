@@ -169,6 +169,14 @@ MonoBehaviour:
   - {fileID: 2097008855361470743, guid: 6ca23477c8459044a9833ca626398215, type: 3}
   - {fileID: 6016092990726597950, guid: 10a92cc2c443cff4d8ac4c727d4d0dbc, type: 3}
   - {fileID: 2018160517257068147, guid: cfd03ce505a3f4d4196182ff203f07a4, type: 3}
+  bottomEndRooms:
+  - {fileID: 7312849507015234095, guid: 299e5c0368e565a4bba663c48b6f1bf9, type: 3}
+  topEndRooms:
+  - {fileID: 2531738160028927245, guid: 05849e80f6a14104b9edff9a2bd52f54, type: 3}
+  leftEndRooms:
+  - {fileID: 1115647881175146786, guid: 0608bd747f149d2428d137ebeba94353, type: 3}
+  rightEndRooms:
+  - {fileID: 6429522910854932351, guid: 72ca0d0cb7b67284d84001793d6ef301, type: 3}
   closedRoom: {fileID: 0}
 --- !u!4 &85986195
 Transform:
@@ -672,11 +680,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6663911167991227262, guid: db596ed9540375642879afcb74a4b20e,
-        type: 3}
-      propertyPath: m_Name
-      value: FPSController
-      objectReference: {fileID: 0}
     - target: {fileID: 6663911167991725918, guid: db596ed9540375642879afcb74a4b20e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,6 +734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663911167991227262, guid: db596ed9540375642879afcb74a4b20e,
+        type: 3}
+      propertyPath: m_Name
+      value: FPSController
       objectReference: {fileID: 0}
     - target: {fileID: 6663911167991725916, guid: db596ed9540375642879afcb74a4b20e,
         type: 3}
