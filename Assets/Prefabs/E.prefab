@@ -92,6 +92,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2489697127574451011, guid: 05849e80f6a14104b9edff9a2bd52f54,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489697127574451011, guid: 05849e80f6a14104b9edff9a2bd52f54,
+        type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1794261802073553866, guid: 05849e80f6a14104b9edff9a2bd52f54, type: 3}
     - {fileID: 5065054651273299888, guid: 05849e80f6a14104b9edff9a2bd52f54, type: 3}
