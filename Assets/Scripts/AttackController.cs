@@ -16,6 +16,10 @@ public class AttackController : MonoBehaviour
     // The number of extra 
     // bullets the player CAN have
     public int maxExtraBullets = 100;
+    //source for our gunfire
+    public AudioSource gunFire;
+    //clip for our gunfire
+    public AudioClip gunFireClip;
     // Used to check if 
     // the player wants to shoot
     private bool shoot;
@@ -61,6 +65,7 @@ public class AttackController : MonoBehaviour
         if (shoot)
         {
             Shoot();
+            //GunFireSound();
         }
 
         // if we click the 'R' button 
@@ -210,5 +215,10 @@ public class AttackController : MonoBehaviour
     {
         yield return new WaitForSeconds(currentWeapon.reloadTime);
         isReloading = false;
+    }
+
+    void GunFireSound() {
+
+    	//gunFire.PlayOneShot(gunFireClip, 0.7f);
     }
 }

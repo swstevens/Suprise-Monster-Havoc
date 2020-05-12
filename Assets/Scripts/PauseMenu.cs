@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,19 +38,20 @@ public class PauseMenu : MonoBehaviour {
     	GameIsPaused = true;
     }
 
-    public void LoadMenu() {
+    public void Reload() {
 
-    	Scene scene = SceneManager.GetActiveScene();
-    	SceneManager.LoadScene("room_generator");
     	Time.timeScale = 1f;
     	GameIsPaused = false;
+    	Scene scene = SceneManager.GetActiveScene();
+    	SceneManager.LoadScene("room_generator");
     }
 
-    public void MainMenu()
-    {
+    public void MainMenu() {
 
-        Scene scene = SceneManager.GetActiveScene();
+    	Time.timeScale = 1f;
+    	GameIsPaused = false;
         SceneManager.LoadScene("main_menu");
+
     }
 
     public void QuitGame() {
