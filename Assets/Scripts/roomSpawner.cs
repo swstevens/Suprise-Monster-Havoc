@@ -17,10 +17,12 @@ public class roomSpawner : MonoBehaviour
     // this number needs to stay the same across all roomspawners
     public int roomLimit = 10;
     private int i;
+    public float waitTime = 5f;
 
     void Start()
     {
         //Time.timeScale = 1f;
+        Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawn", 0.1f);
         i = 1;
