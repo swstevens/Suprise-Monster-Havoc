@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,7 @@ public class AIController : MonoBehaviour {
     NavMeshAgent agent;
 
     public float MoveSpeed = 4f;
-    public float MaxDist = 12f;
+    public float MaxDist = 8f;
     public float distance;
     //int MinDist = 5;
 
@@ -28,6 +28,12 @@ public class AIController : MonoBehaviour {
  
         if (distance <= MaxDist) {
  			agent.SetDestination(target.position);
+			// need to figure out how to make navmeshes
+
+			Vector3 direction = (target.position - transform.position).normalized;
+			Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+
             //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
         }
