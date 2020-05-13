@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 4
-  MaxDist: 8
+  MaxDist: 12
   distance: 0
 --- !u!54 &83493887752040170
 Rigidbody:

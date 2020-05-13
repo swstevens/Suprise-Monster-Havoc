@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour {
 
     Transform target;
-    NavMeshAgent agent;
+    //NavMeshAgent agent;
 
     public float MoveSpeed = 4f;
     public float MaxDist = 8f;
@@ -16,7 +16,7 @@ public class AIController : MonoBehaviour {
 
     void Start() 
     {
-    	agent = GetComponent<NavMeshAgent>();
+    	//agent = GetComponent<NavMeshAgent>();
     	target = PlayerManager.instance.player.transform;
     }
  
@@ -27,14 +27,14 @@ public class AIController : MonoBehaviour {
 
  
         if (distance <= MaxDist) {
- 			agent.SetDestination(target.position);
+ 			//agent.SetDestination(target.position);
 			// need to figure out how to make navmeshes
 
 			Vector3 direction = (target.position - transform.position).normalized;
 			Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
 
-            //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
         }
     }
