@@ -13,7 +13,7 @@ public class roomSpawner : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand;
-    private int spawned = 0;
+    public int spawned = 0;
     // this number needs to stay the same across all roomspawners
     public int roomLimit = 10;
     public static int i;
@@ -68,8 +68,9 @@ public class roomSpawner : MonoBehaviour
             } 
             spawned = 2;
         }
-        else if (spawned == 0 && i >= roomLimit)
+        else if (spawned == 0 && MapManager.instance.i >= MapManager.instance.mapLimit)
         {
+        	// mark all leftover doors to nowhere as needing an end room
             spawned = 1;
         }
         // if spawn == 1, then spawn an end room
@@ -111,11 +112,36 @@ public class roomSpawner : MonoBehaviour
             //Instatiate(templates.closedRoom, transform.position, Quaternion.identity);
             spawned = 1;
         }
+        
         if (other.CompareTag("SpawnPoint"))
         {
             if (other.GetComponent<roomSpawner>().spawned == 0 && spawned == 0)
             {
-                // spawn a wall
+            	// spawn a wall
+                if (openingDirection == 1)
+            	{
+                	// spawn a bottom end room
+                	rand = Random.Range(0, templates.bottomEndRooms.Length);
+                	Instantiate(templates.bottomEndRooms[rand], transform.position, templates.bottomEndRooms[rand].transform.rotation);
+            	}
+            	else if (openingDirection == 2)
+            	{
+                	// spawn a top end room
+                	rand = Random.Range(0, templates.topEndRooms.Length);
+                	Instantiate(templates.topEndRooms[rand], transform.position, templates.topEndRooms[rand].transform.rotation);
+            	}
+            	else if (openingDirection == 3)
+            	{
+                	// spawn a left end room
+                	rand = Random.Range(0, templates.leftEndRooms.Length);
+                	Instantiate(templates.leftEndRooms[rand], transform.position, templates.leftEndRooms[rand].transform.rotation);
+            	}
+            	else if (openingDirection == 4)
+            	{
+                	// spawn a right end room
+                	rand = Random.Range(0, templates.rightEndRooms.Length);
+                	Instantiate(templates.rightEndRooms[rand], transform.position, templates.rightEndRooms[rand].transform.rotation);
+            	} 
                 // Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
