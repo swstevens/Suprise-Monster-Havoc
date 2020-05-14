@@ -52,6 +52,23 @@ public class AttackController : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale != 0) {
+
+
+            // If the player click the fire 
+            // button (mouse left click) 
+            // we set 'fire=true'
+            // and if the player release 
+            // the fire button we set 'shoot=false'
+            // and last if shoot is true 
+            // we run our 'Shoot()' function
+            // By doing so can we make the 
+            // player shoot as long the 
+            // fire button haven't been released.
+            if (Input.GetButtonDown("Fire1"))
+            {
+                shoot = true;
+            }
 
         // If the player click the fire 
         // button (mouse left click) 
@@ -69,35 +86,35 @@ public class AttackController : MonoBehaviour
             shoot = true;
         }
 
-        if (Input.GetButtonUp("Fire1"))
-        {
-            shoot = false;
-        }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                shoot = false;
+            }
 
-        if (shoot)
-        {
-            Shoot();
-            //GunFireSound();
-        }
+            if (shoot)
+            {
+                Shoot();
+            }
 
-        if (muzzleFlashEnabled == true) {
+            if (muzzleFlashEnabled == true) {
 
-            MuzzleFlashObject.SetActive(true);
-            MuzzleFlashTimer -= Time.deltaTime;
-        }
+                MuzzleFlashObject.SetActive(true);
+                MuzzleFlashTimer -= Time.deltaTime;
+            }
 
-        if (MuzzleFlashTimer <= 0) {
+            if (MuzzleFlashTimer <= 0) {
 
-            MuzzleFlashObject.SetActive(false);
-            muzzleFlashEnabled = false;
-            MuzzleFlashTimer = MuzzleFlashTimerStart;
-        }
+                MuzzleFlashObject.SetActive(false);
+                muzzleFlashEnabled = false;
+                MuzzleFlashTimer = MuzzleFlashTimerStart;
+            }
 
-        // if we click the 'R' button 
-        // on the keyboard we run our reload function
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reload();
+            // if we click the 'R' button 
+            // on the keyboard we run our reload function
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+            }
         }
     }
 
@@ -246,10 +263,5 @@ public class AttackController : MonoBehaviour
     {
         yield return new WaitForSeconds(currentWeapon.reloadTime);
         isReloading = false;
-    }
-
-    void GunFireSound() {
-
-    	//gunFire.PlayOneShot(gunFireClip, 0.7f);
     }
 }
