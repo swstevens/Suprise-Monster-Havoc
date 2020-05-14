@@ -52,7 +52,6 @@ public class AttackController : MonoBehaviour
 
     void Update()
     {
-
         if (Time.timeScale != 0) {
 
 
@@ -70,6 +69,22 @@ public class AttackController : MonoBehaviour
             {
                 shoot = true;
             }
+
+        // If the player click the fire 
+        // button (mouse left click) 
+        // we set 'fire=true'
+        // and if the player release 
+        // the fire button we set 'shoot=false'
+        // and last if shoot is true 
+        // we run our 'Shoot()' function
+        // By doing so can we make the 
+        // player shoot as long the 
+        // fire button haven't been released.
+        if (Input.GetButtonDown("Fire1"))
+        
+        {
+            shoot = true;
+        }
 
             if (Input.GetButtonUp("Fire1"))
             {
