@@ -34,9 +34,17 @@ public class AttackController : MonoBehaviour
     // information about raycast hits.
     private RaycastHit hit;
 
+    public GameObject MuzzleFlashObject;
+    public float MuzzleFlashTimer = 0.1f;
+    private float MuzzleFlashTimerStart;
+    public bool muzzleFlashEnabled = false;
+
+    public AudioSource gunSound;
+
     void Start()
     {
         currentExtraBullets = maxExtraBullets;
+        MuzzleFlashTimerStart = MuzzleFlashTimer;
     }
 
     void Update()
@@ -68,6 +76,19 @@ public class AttackController : MonoBehaviour
             //GunFireSound();
         }
 
+        if (muzzleFlashEnabled == true) {
+
+            MuzzleFlashObject.SetActive(true);
+            MuzzleFlashTimer -= Time.deltaTime;
+        }
+
+        if (MuzzleFlashTimer <= 0) {
+
+            MuzzleFlashObject.SetActive(false);
+            muzzleFlashEnabled = false;
+            MuzzleFlashTimer = MuzzleFlashTimerStart;
+        }
+
         // if we click the 'R' button 
         // on the keyboard we run our reload function
         if (Input.GetKeyDown(KeyCode.R))
@@ -89,6 +110,10 @@ public class AttackController : MonoBehaviour
         {
             return;
         }
+
+        muzzleFlashEnabled = true; //enable muzzle flash
+        gunSound.Play();
+        
         // remove a bullet from the weapon's magazin
         currentWeapon.currentBullets -= 1;
 
