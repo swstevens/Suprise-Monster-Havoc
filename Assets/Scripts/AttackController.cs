@@ -64,6 +64,7 @@ public class AttackController : MonoBehaviour
         // player shoot as long the 
         // fire button haven't been released.
         if (Input.GetButtonDown("Fire1"))
+        
         {
             shoot = true;
         }

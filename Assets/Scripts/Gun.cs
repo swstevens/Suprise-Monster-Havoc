@@ -7,18 +7,24 @@ public class Gun : MonoBehaviour
 
 	public Camera fpsCam;
 
-	public Weapon currentWeapon;
+	public int bullets = 30;
 
-	void Update() 
+	void Update()
 	{
-		if (Input.GetButtonDown("Fire1") && (currentWeapon.currentBullets !=0))
+		if (Input.GetButtonDown("Fire1") && (bullets > 0))
 		{
 			Shoot();
 		}
+
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			Reload();
+		}
 	}
 
-	void Shoot() 
+	void Shoot()
 	{
+		bullets -= 1;
 		RaycastHit hit;
 		if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
 		{
@@ -30,5 +36,12 @@ public class Gun : MonoBehaviour
 				target.TakeDamage(damage);
 			}
 		}
+
 	}
+
+	void Reload()
+	{
+		bullets = 30;
+	}
+
 }
