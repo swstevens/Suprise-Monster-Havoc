@@ -41,6 +41,9 @@ public class AttackController : MonoBehaviour
 
     public AudioSource gunSound;
 
+    public GameObject reloadTextObject;
+    public bool needReload = false;
+
     void Start()
     {
         currentExtraBullets = maxExtraBullets;
@@ -108,6 +111,7 @@ public class AttackController : MonoBehaviour
             isReloading || currentWeapon != null &&
             currentWeapon.currentBullets <= 0)
         {
+            reloadTextObject.SetActive(true);
             return;
         }
 
@@ -234,6 +238,7 @@ public class AttackController : MonoBehaviour
         // if you keep the seperated
         isReloading = true;
         StartCoroutine(ReloadCooldown());
+        reloadTextObject.SetActive(false);
     }
 
     IEnumerator ReloadCooldown()

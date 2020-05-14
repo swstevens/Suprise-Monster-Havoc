@@ -1214,8 +1214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb450425705df4946906b27df86070e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
-  MaxDist: 12
+  MoveSpeed: 5
+  MaxDist: 20
   distance: 0
 --- !u!54 &83493887752040170
 Rigidbody:
