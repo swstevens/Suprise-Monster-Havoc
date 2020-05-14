@@ -7,9 +7,11 @@ public class Gun : MonoBehaviour
 
 	public Camera fpsCam;
 
+	public Weapon currentWeapon;
+
 	void Update() 
 	{
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButtonDown("Fire1") && (currentWeapon.currentBullets !=0))
 		{
 			Shoot();
 		}
