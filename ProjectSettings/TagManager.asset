@@ -7,6 +7,11 @@ TagManager:
   - Rooms
   - SpawnPoint
   - NoRoom
+  - Metal
+  - Target
+  - ExplosiveBarrel
+  - rifle
+  - player_rifle
   layers:
   - Default
   - TransparentFX

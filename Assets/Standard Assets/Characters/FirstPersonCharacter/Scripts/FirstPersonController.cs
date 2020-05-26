@@ -269,6 +269,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.YSensitivity = value;
 
         }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("rifle"))
+            {
+                other.gameObject.SetActive(false);
+                GameObject r = GameObject.Find("FPSController/FirstPersonCharacter/player_rifle");
+                r.gameObject.SetActive(true);
+                //player_rifle_model.SetActive(true);
+            }
+        }
     }
     
 }

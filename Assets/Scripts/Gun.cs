@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Globalization;
+using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Gun : MonoBehaviour
 {
@@ -25,6 +28,7 @@ public class Gun : MonoBehaviour
 	void Shoot()
 	{
 		bullets -= 1;
+
 		RaycastHit hit;
 		if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
 		{
