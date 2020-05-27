@@ -1188,6 +1188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  HitImage: {fileID: 6962388194257444047, guid: 6f28b2511d76c53498fb9ad87e3ec6ee,
+    type: 3}
 --- !u!136 &6127096835407394275
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1217,6 +1219,7 @@ MonoBehaviour:
   MoveSpeed: 5
   MaxDist: 20
   distance: 0
+  MinDist: 2
 --- !u!54 &83493887752040170
 Rigidbody:
   m_ObjectHideFlags: 0

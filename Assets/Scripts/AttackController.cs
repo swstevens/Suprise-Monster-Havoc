@@ -45,6 +45,8 @@ public class AttackController : MonoBehaviour
     public GameObject reloadTextObject;
     public bool needReload = false;
 
+    public GameObject hitImage;
+    
     void Start()
     {
         currentExtraBullets = maxExtraBullets;
