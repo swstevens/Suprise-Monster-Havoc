@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8587684500613030974}
-  m_RootOrder: 54
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &7796749527960124476
 MeshRenderer:
@@ -148,7 +148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8587684500613030974}
-  m_RootOrder: 56
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5823499244958383647
 MeshRenderer:
@@ -241,7 +241,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8587684500613030974}
-  - component: {fileID: 7737366423964277319}
   m_Layer: 0
   m_Name: Alpha NWES
   m_TagString: Untagged
@@ -314,11 +313,11 @@ Transform:
   - {fileID: 4138631206589987120}
   - {fileID: 4138631206855098044}
   - {fileID: 4138631207955456560}
+  - {fileID: 8849869416563366277}
   - {fileID: 4043826860198674863}
   - {fileID: 6989183650124916030}
   - {fileID: 8104199940996576229}
   - {fileID: 4619815213939844685}
-  - {fileID: 8849869416563366277}
   - {fileID: 4978838413249006436}
   - {fileID: 1025398292350520517}
   - {fileID: 6589615582264036324}
@@ -358,19 +357,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7737366423964277319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398402792311250434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dacb2f0252b0f1448ba8110c4b29910d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NavMeshData: {fileID: 0}
 --- !u!1 &7234578582436036513
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8587684500613030974}
-  m_RootOrder: 57
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &392507569591321142
 MeshRenderer:
@@ -502,7 +488,7 @@ GameObject:
   - component: {fileID: 3231370226646762968}
   m_Layer: 0
   m_Name: Destroyer
-  m_TagString: Untagged
+  m_TagString: Destroyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -519,7 +505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8587684500613030974}
-  m_RootOrder: 58
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &6051069739162391976
 MeshRenderer:
@@ -631,7 +617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8587684500613030974}
-  m_RootOrder: 55
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3969741514415239318
 MeshRenderer:
