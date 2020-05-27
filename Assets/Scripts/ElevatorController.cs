@@ -20,14 +20,14 @@ public class ElevatorController : MonoBehaviour
     {
     	if (inRange)
     	{
-    		if (EnemyManager.instance.numEnemies == 0)
+    		if (EnemyManager.instance.numEnemies >= 0)
     		{
     			if (Input.GetKeyDown(KeyCode.E))
     			{
     				dialogue.text = "Level Progressed";
     				SceneManager.LoadScene(leveltoload, LoadSceneMode.Single);
     				//load medium level, broken for now
-    				//SceneManager.LoadScene("mediumlevel");
+    				SceneManager.LoadScene("hub_world");
     			}
     		}
     	}

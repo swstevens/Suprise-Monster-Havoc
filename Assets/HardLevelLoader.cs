@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class EasyLevelLoader : MonoBehaviour
+public class HardLevelLoader : MonoBehaviour
 {
+    
     private bool inRange;
     private bool active = true;
     public Transform player;
@@ -31,7 +32,7 @@ public class EasyLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
-	            	SceneManager.LoadScene("easy_level");
+	            	SceneManager.LoadScene("hard_level");
                 }
             }
             // if looking at the terminal (dot product)
@@ -50,7 +51,7 @@ public class EasyLevelLoader : MonoBehaviour
         }
         if (active) 
         {
-            dialogue.text = "Level 1 (E)";
+            dialogue.text = "Level 3 (E)";
         }
     }
 

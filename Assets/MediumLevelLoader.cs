@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class EasyLevelLoader : MonoBehaviour
+public class MediumLevelLoader : MonoBehaviour
 {
     private bool inRange;
     private bool active = true;
@@ -31,7 +31,7 @@ public class EasyLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
-	            	SceneManager.LoadScene("easy_level");
+	            	SceneManager.LoadScene("medium_level");
                 }
             }
             // if looking at the terminal (dot product)
@@ -50,7 +50,7 @@ public class EasyLevelLoader : MonoBehaviour
         }
         if (active) 
         {
-            dialogue.text = "Level 1 (E)";
+            dialogue.text = "Level 2 (E)";
         }
     }
 
