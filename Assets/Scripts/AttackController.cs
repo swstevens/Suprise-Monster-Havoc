@@ -10,6 +10,7 @@ public class AttackController : MonoBehaviour
     // The current weapon our 
     // player is using
     public Weapon currentWeapon;
+    public GameObject activeWeapon;
     // The number of bullets the 
     // player has available for reloading
     public int currentExtraBullets;
@@ -54,7 +55,6 @@ public class AttackController : MonoBehaviour
     {
         if (Time.timeScale != 0) {
 
-
             // If the player click the fire 
             // button (mouse left click) 
             // we set 'fire=true'
@@ -66,25 +66,12 @@ public class AttackController : MonoBehaviour
             // player shoot as long the 
             // fire button haven't been released.
             if (Input.GetButtonDown("Fire1"))
+            
             {
-                shoot = true;
+                if (activeWeapon.active == true) {
+                    shoot = true;
+                }
             }
-
-        // If the player click the fire 
-        // button (mouse left click) 
-        // we set 'fire=true'
-        // and if the player release 
-        // the fire button we set 'shoot=false'
-        // and last if shoot is true 
-        // we run our 'Shoot()' function
-        // By doing so can we make the 
-        // player shoot as long the 
-        // fire button haven't been released.
-        if (Input.GetButtonDown("Fire1"))
-        
-        {
-            shoot = true;
-        }
 
             if (Input.GetButtonUp("Fire1"))
             {
