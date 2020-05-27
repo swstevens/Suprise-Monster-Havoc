@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-<<<<<<< HEAD
 
-=======
->>>>>>> bc0e620c84db3cad6b4140ebf3fce2e25d6482f8
 public class ElevatorController : MonoBehaviour
 {
 	public Text dialogue;
