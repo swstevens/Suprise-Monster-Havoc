@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class HealStation : MonoBehaviour
+public class EasyLevelLoader : MonoBehaviour
 {
     private bool inRange;
     private bool active = true;
@@ -25,18 +26,12 @@ public class HealStation : MonoBehaviour
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 toOther = player.position - transform.position;
             Debug.Log(Vector3.Dot(forward,toOther));
-            if (Vector3.Dot(forward,toOther) < 1.5)
+            if (Vector3.Dot(forward,toOther) < 5)
             {
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
-                    Debug.Log("Player has been healed");
-                    PlayerManager.instance.hp += 50;
-                    if (PlayerManager.instance.hp >100)
-                    {
-                        PlayerManager.instance.hp = 100;
-                    }
-                    dialogue.text = "You have been healed!";
-                    active = false;
+
+	            	SceneManager.LoadScene("room_generator");
                 }
             }
             // if looking at the terminal (dot product)
@@ -55,7 +50,7 @@ public class HealStation : MonoBehaviour
         }
         if (active) 
         {
-            dialogue.text = "Get close to the monitor and press E to heal!";
+            dialogue.text = "Level 1 (Press E)";
         }
     }
 

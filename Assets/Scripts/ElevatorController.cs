@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class ElevatorController : MonoBehaviour
 {
 	public Text dialogue;
@@ -18,11 +18,12 @@ public class ElevatorController : MonoBehaviour
     {
     	if (inRange)
     	{
-    		if (EnemyManager.instance.numEnemies == 0)
+    		if (EnemyManager.instance.numEnemies >= 0)
     		{
     			if (Input.GetKeyDown(KeyCode.E))
     			{
     				dialogue.text = "Level Progressed";
+    				SceneManager.LoadScene("hub_world");
     				//load medium level, broken for now
     				//SceneManager.LoadScene("mediumlevel");
     			}

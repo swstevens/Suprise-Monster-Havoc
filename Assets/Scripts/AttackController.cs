@@ -68,7 +68,7 @@ public class AttackController : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             
             {
-                if (activeWeapon.active == true) {
+                if (activeWeapon.activeSelf == true) {
                     shoot = true;
                 }
             }
