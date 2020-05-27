@@ -11,8 +11,9 @@ public class EnemyManager : MonoBehaviour
 		instance = this;
 	}
 	public int numEnemies = 0;
-	public float enemyHP = 0f;
+	public float enemyHP = 50f;
 	public Text enemyCount;
+	public int damage = 10;
 
 	void Update()
 	{

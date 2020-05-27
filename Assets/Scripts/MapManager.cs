@@ -11,4 +11,5 @@ public class MapManager : MonoBehaviour
 	}
 	public int i = 1;
 	public int mapLimit = 10;
+	public string nextLevel;
 }

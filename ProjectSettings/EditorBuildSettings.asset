@@ -9,9 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/main_menu.unity
     guid: 61927185f274d034eba4bca2afaab1b0
   - enabled: 1
+    path: Assets/Scenes/hub_world.unity
+    guid: 1df7c00e474db6d43950bc0d6b8fa1e5
+  - enabled: 1
     path: Assets/Scenes/room_generator.unity
     guid: bccc1b7a74f30344ab8f995bd2cceecd
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/easy_level.unity
+    guid: ab47f1c391d687c43816532b29bac107
+  - enabled: 1
+    path: Assets/Scenes/medium_level.unity
+    guid: e8e97af1ed9a20049989b6f1b1300880
+  - enabled: 1
+    path: Assets/Scenes/hard_level.unity
+    guid: 67359351a6d9eb64d95f11d93ecb3058
   m_configObjects: {}

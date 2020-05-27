@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-	public float health = 50f;
+	public float health;
+
+	void Start()
+	{
+		health = EnemyManager.instance.enemyHP;
+	}
 
 	public void TakeDamage(float damage)
 	{

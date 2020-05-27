@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc0e620c84db3cad6b4140ebf3fce2e25d6482f8
 public class ElevatorController : MonoBehaviour
 {
 	public Text dialogue;
 	private bool inRange = false;
+	private string leveltoload;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        leveltoload = MapManager.instance.nextLevel;
     }
 
     void Update()
@@ -23,6 +28,7 @@ public class ElevatorController : MonoBehaviour
     			if (Input.GetKeyDown(KeyCode.E))
     			{
     				dialogue.text = "Level Progressed";
+    				SceneManager.LoadScene(leveltoload, LoadSceneMode.Single);
     				//load medium level, broken for now
     				//SceneManager.LoadScene("mediumlevel");
     			}

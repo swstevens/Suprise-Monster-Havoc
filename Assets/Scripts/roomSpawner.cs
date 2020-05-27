@@ -23,9 +23,9 @@ public class roomSpawner : MonoBehaviour
     {
         //Time.timeScale = 1f;
         // Destroying all nodes after five seconds appears to be causing problems (not every node has bee fully spawned before nodes are deleted)
-        //Destroy(gameObject, waitTime);
+        Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn", 1f);
+        Invoke("Spawn", .1f);
     }
     
     void Spawn()

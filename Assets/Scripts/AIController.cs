@@ -12,13 +12,15 @@ public class AIController : MonoBehaviour {
     public float MoveSpeed = 4f;
     public float MaxDist = 8f;
     public float distance;
-    //int MinDist = 5;
+    public float MinDist = 2f;
+    private int damage;
 
     void Start() 
     {
     	//agent = GetComponent<NavMeshAgent>();
     	target = PlayerManager.instance.player.transform;
     	EnemyManager.instance.numEnemies++;
+    	damage = EnemyManager.instance.damage;
     }
  
     void Update() 
@@ -26,8 +28,15 @@ public class AIController : MonoBehaviour {
         //transform.LookAt(Player);
         distance = Vector3.Distance(target.position, transform.position);
 
- 
-        if (distance <= MaxDist) {
+ 		if (distance <= MinDist)
+ 		{
+ 			Vector3 direction = (target.position - transform.position).normalized;
+ 			Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
+
+			// do an attack
+ 		}
+        else if (distance <= MaxDist) {
  			//agent.SetDestination(target.position);
 			// need to figure out how to make navmeshes
 
@@ -40,9 +49,18 @@ public class AIController : MonoBehaviour {
         }
     }
 
+    void onTriggerEnter(Collider other)
+    {
+    	if (other.CompareTag("Player"))
+    	{
+    		PlayerManager.instance.hp -= damage;
+    	}
+    }
+
     void OnDrawGizmosSelected()
     {
     	Gizmos.color = Color.red;
     	Gizmos.DrawWireSphere(transform.position, MaxDist);
+    	Gizmos.DrawWireSphere(transform.position,MinDist);
     }
 }

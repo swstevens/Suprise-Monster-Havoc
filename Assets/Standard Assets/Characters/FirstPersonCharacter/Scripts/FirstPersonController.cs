@@ -65,7 +65,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 
             currentHealth = maxHealth;
-            healthbar.value = currentHealth;
+            //healthbar.value = currentHealth;
 
         }
 
@@ -290,9 +290,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 r.gameObject.SetActive(true);
                 //player_rifle_model.SetActive(true);
             }
-        }
-
-        void OnCollisionEnter(Collider other) {
 
             if (other.gameObject.CompareTag("Polygonal Metalon Green")) {
                 Debug.Log("Taking damage");
