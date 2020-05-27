@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e813dea6afe70041859c86bf9eb4d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   dialogue: {fileID: 1567410876}
 --- !u!65 &221468606
 BoxCollider:
@@ -794,6 +795,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6663911166147381067, guid: db596ed9540375642879afcb74a4b20e,
+        type: 3}
+      propertyPath: m_Name
+      value: player_rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663911166147381067, guid: db596ed9540375642879afcb74a4b20e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663911166147381067, guid: db596ed9540375642879afcb74a4b20e,
+        type: 3}
+      propertyPath: m_TagString
+      value: player_rifle
+      objectReference: {fileID: 0}
     - target: {fileID: 6663911167991725918, guid: db596ed9540375642879afcb74a4b20e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -878,21 +894,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.212
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663911166147381067, guid: db596ed9540375642879afcb74a4b20e,
-        type: 3}
-      propertyPath: m_Name
-      value: player_rifle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663911166147381067, guid: db596ed9540375642879afcb74a4b20e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663911166147381067, guid: db596ed9540375642879afcb74a4b20e,
-        type: 3}
-      propertyPath: m_TagString
-      value: player_rifle
       objectReference: {fileID: 0}
     - target: {fileID: 6663911166351878703, guid: db596ed9540375642879afcb74a4b20e,
         type: 3}
@@ -2554,6 +2555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i: 1
   mapLimit: 20
+  currentlevel: medium_level
   nextLevel: hard_level
 --- !u!114 &1185058865
 MonoBehaviour:

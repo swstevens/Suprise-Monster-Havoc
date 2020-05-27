@@ -7,6 +7,12 @@ public class PauseMenu : MonoBehaviour {
 
 	public static bool GameIsPaused = false;
 	public GameObject pauseMenuUI;
+	private string currentlevel;
+
+	void Start()
+	{
+		currentlevel = MapManager.instance.currentlevel;
+	}
 
     void Update() {
         
@@ -43,7 +49,7 @@ public class PauseMenu : MonoBehaviour {
     	Time.timeScale = 1f;
     	GameIsPaused = false;
     	Scene scene = SceneManager.GetActiveScene();
-    	SceneManager.LoadScene("room_generator");
+    	SceneManager.LoadScene(currentlevel);
     }
 
     public void MainMenu() {
