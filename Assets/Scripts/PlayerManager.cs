@@ -11,4 +11,5 @@ public class PlayerManager : MonoBehaviour
     }
 
     public GameObject player;
+    public int hp = 100;
 }

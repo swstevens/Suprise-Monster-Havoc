@@ -65,7 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
-  ammo: {fileID: 0}
   fpsCam: {fileID: 6663911167993258334}
   bullets: 30
 --- !u!1 &6663911167991227260
@@ -100,7 +99,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6663911166147381065}
-  m_Father: {fileID: 6663911167991725918}
+  m_Father: {fileID: 2457152174590762014}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6663911167993258334
@@ -175,6 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 6663911166147381066}
+  activeWeapon: {fileID: 0}
   currentExtraBullets: 0
   maxExtraBullets: 100
   gunFire: {fileID: 0}
@@ -193,11 +193,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6663911167991725918}
+  - component: {fileID: 2457152174590762014}
   - component: {fileID: 6663911167980443326}
   - component: {fileID: 6663911167981541022}
   - component: {fileID: 6663911167988318238}
   - component: {fileID: 6663911167986809502}
+  - component: {fileID: 380815693624528340}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Untagged
@@ -205,21 +206,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6663911167991725918
-Transform:
+--- !u!224 &2457152174590762014
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6663911167991227262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6663911167991725916}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!143 &6663911167980443326
 CharacterController:
   m_ObjectHideFlags: 0
@@ -362,6 +368,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  maxHealth: 100
+  currentHealth: 0
+  healthbar: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!54 &6663911167988318238
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -474,3 +484,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!222 &380815693624528340
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663911167991227262}
+  m_CullTransparentMesh: 0

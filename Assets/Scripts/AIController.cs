@@ -18,6 +18,7 @@ public class AIController : MonoBehaviour {
     {
     	//agent = GetComponent<NavMeshAgent>();
     	target = PlayerManager.instance.player.transform;
+    	EnemyManager.instance.numEnemies++;
     }
  
     void Update() 

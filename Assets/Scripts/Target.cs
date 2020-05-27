@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-	public float health = 20f;
+	public float health = 50f;
 
 	public void TakeDamage(float damage)
 	{
@@ -17,6 +17,7 @@ public class Target : MonoBehaviour
 
 	void Die()
 	{
+		EnemyManager.instance.numEnemies--;
 		Destroy(gameObject);
 		// spawn a weapon type
 	}
