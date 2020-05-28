@@ -12,6 +12,9 @@ TagManager:
   - ExplosiveBarrel
   - rifle
   - player_rifle
+  - Destroyer
+  - Wall
+  - wall
   layers:
   - Default
   - TransparentFX
