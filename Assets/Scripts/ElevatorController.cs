@@ -14,6 +14,7 @@ public class ElevatorController : MonoBehaviour
     void Start()
     {
         leveltoload = MapManager.instance.nextLevel;
+        dialogue.text = "";
     }
 
     void Update()

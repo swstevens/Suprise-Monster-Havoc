@@ -14,7 +14,7 @@ TagManager:
   - player_rifle
   - Destroyer
   - Wall
-  - wall
+  - door
   layers:
   - Default
   - TransparentFX

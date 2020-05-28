@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class door : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
+    	Debug.Log(other.tag);
     	if (other.CompareTag("wall"))
     	{
     		Debug.Log("Wall Encountered");
-    		Destroy(other.transform);
+    		other.transform.gameObject.SetActive(false);
     	}
     }
 }

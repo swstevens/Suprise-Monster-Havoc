@@ -6,6 +6,8 @@ public class Gen : MonoBehaviour
 {
     public GameObject floor;
     public GameObject door;
+    public GameObject vertical_wall;
+    public GameObject horizontal_wall;
     // Start is called before the first frame update
     void Start()
     {
@@ -207,7 +209,22 @@ public class Gen : MonoBehaviour
                     GameObject g = Instantiate(door);
                     g.transform.position = new Vector3(5*s.x + 2.5f*(add(s,dd)-s).x, .5f, 5*s.y + 2.5f * (add(s, dd) - s).y);
                 }
+                if(!alreadyConsidered.Contains(add(s,dd)) && !spawned.Contains(add(s,dd)))
+                {
+                    if (dd == dir.Down || dd == dir.Up)
+                    {
+                        GameObject g = Instantiate(horizontal_wall);
+                        g.transform.position = new Vector3(5*s.x + 2.5f*(add(s,dd)-s).x, .5f, 5*s.y + 2.5f * (add(s, dd) - s).y);
+                    }
+                    else 
+                    {
+                        GameObject g = Instantiate(vertical_wall);
+                        g.transform.position = new Vector3(5*s.x + 2.5f*(add(s,dd)-s).x, .5f, 5*s.y + 2.5f * (add(s, dd) - s).y);
+                    }
+                }
                 alreadyConsidered.Add(s);
+
+
             }
         }
 
