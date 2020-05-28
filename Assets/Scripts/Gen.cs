@@ -198,7 +198,7 @@ public class Gen : MonoBehaviour
         }
 
         HashSet<Vector2Int> alreadyConsidered = new HashSet<Vector2Int>();
-        // Now for the doors, uses "generate a door is nearby"
+        // Now for the doors and walls, uses "generate a door is nearby"
         foreach (Vector2Int s in spawned)
         {
             dir[] d = new dir[] { dir.Left, dir.Up, dir.Down, dir.Right };
