@@ -204,11 +204,13 @@ public class Gen : MonoBehaviour
             dir[] d = new dir[] { dir.Left, dir.Up, dir.Down, dir.Right };
             foreach (dir dd in d)
             {
+                // spawn doors
                 if(IsThere(s, dd) && !alreadyConsidered.Contains(add(s,dd)) && spawned.Contains(add(s,dd)))
                 {    
                     GameObject g = Instantiate(door);
                     g.transform.position = new Vector3(5*s.x + 2.5f*(add(s,dd)-s).x, .5f, 5*s.y + 2.5f * (add(s, dd) - s).y);
                 }
+                // spawn walls
                 if(!alreadyConsidered.Contains(add(s,dd)) && !spawned.Contains(add(s,dd)))
                 {
                     if (dd == dir.Down || dd == dir.Up)
