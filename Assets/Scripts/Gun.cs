@@ -8,12 +8,17 @@ public class Gun : MonoBehaviour
 	public float damage = 10f;
 	public float range = 100f;
 
+	public Text ammo;
+
+
 	public Camera fpsCam;
 
 	public int bullets = 30;
 
 	void Update()
 	{
+		ammo.text = "Ammo: " + bullets;
+
 		if (Input.GetButtonDown("Fire1") && (bullets > 0))
 		{
 			Shoot();
