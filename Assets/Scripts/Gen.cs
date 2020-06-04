@@ -8,6 +8,7 @@ public class Gen : MonoBehaviour
     public GameObject door;
     public GameObject vertical_wall;
     public GameObject horizontal_wall;
+    public float roomSize;
     // Start is called before the first frame update
     void Start()
     {
@@ -193,8 +194,10 @@ public class Gen : MonoBehaviour
 
         foreach(Vector2Int s in spawned)
         {
+        	//float rand = Random.Range(0, templates.floors.Length);
+            // Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
             GameObject g = Instantiate(floor);
-            g.transform.position = new Vector3(5 * s.x, -.5f, 5 * s.y);
+            g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
         }
 
         HashSet<Vector2Int> alreadyConsidered = new HashSet<Vector2Int>();
@@ -208,7 +211,7 @@ public class Gen : MonoBehaviour
                 if(IsThere(s, dd) && !alreadyConsidered.Contains(add(s,dd)) && spawned.Contains(add(s,dd)))
                 {    
                     GameObject g = Instantiate(door);
-                    g.transform.position = new Vector3(5*s.x + 2.5f*(add(s,dd)-s).x, .5f, 5*s.y + 2.5f * (add(s, dd) - s).y);
+                    g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
                 }
                 // spawn walls
                 if(!alreadyConsidered.Contains(add(s,dd)) && !spawned.Contains(add(s,dd)))
@@ -216,12 +219,12 @@ public class Gen : MonoBehaviour
                     if (dd == dir.Down || dd == dir.Up)
                     {
                         GameObject g = Instantiate(horizontal_wall);
-                        g.transform.position = new Vector3(5*s.x + 2.5f*(add(s,dd)-s).x, .5f, 5*s.y + 2.5f * (add(s, dd) - s).y);
+                        g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
                     }
                     else 
                     {
                         GameObject g = Instantiate(vertical_wall);
-                        g.transform.position = new Vector3(5*s.x + 2.5f*(add(s,dd)-s).x, .5f, 5*s.y + 2.5f * (add(s, dd) - s).y);
+                        g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
                     }
                 }
                 alreadyConsidered.Add(s);
@@ -229,10 +232,6 @@ public class Gen : MonoBehaviour
 
             }
         }
-
-
-
-
     }
 
     public enum dir {Left, Right, Up, Down };
