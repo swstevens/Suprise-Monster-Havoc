@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
 		{
 			Reload();
 		}
+
 	}
 
 	void Shoot()
@@ -52,5 +53,7 @@ public class Gun : MonoBehaviour
 	{
 		bullets = 30;
 	}
+
+	
 
 }

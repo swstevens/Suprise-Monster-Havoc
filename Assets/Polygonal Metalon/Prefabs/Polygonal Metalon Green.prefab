@@ -1119,7 +1119,7 @@ GameObject:
   - component: {fileID: 5673708500188337723}
   m_Layer: 0
   m_Name: Polygonal Metalon Green
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1188,8 +1188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  HitImage: {fileID: 6962388194257444047, guid: 6f28b2511d76c53498fb9ad87e3ec6ee,
-    type: 3}
 --- !u!136 &6127096835407394275
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1198,7 +1196,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783563462218004}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1
   m_Height: 3.6339798
@@ -1235,7 +1233,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!195 &5673708500188337723
 NavMeshAgent:
   m_ObjectHideFlags: 0

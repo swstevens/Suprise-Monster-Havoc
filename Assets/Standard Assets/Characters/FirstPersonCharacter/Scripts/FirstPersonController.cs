@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 #pragma warning disable 618, 649
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -48,6 +49,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public int maxHealth = 100;
         public int currentHealth;
         public Slider healthbar;
+
+
+        public Text hp;
+        public int health = 100;
+
 
         public GameObject enemy;
         // Use this for initialization
@@ -96,6 +102,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             	m_PreviouslyGrounded = m_CharacterController.isGrounded;
             }
+
+            hp.text = "Health: " + health;
+
         }
 
 
@@ -290,12 +299,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 r.gameObject.SetActive(true);
                 //player_rifle_model.SetActive(true);
             }
+        }
 
-            if (other.gameObject.CompareTag("Polygonal Metalon Green")) {
+        void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.CompareTag("enemy"))
+            {
                 Debug.Log("Taking damage");
-                TakeDamage(5);
+                health -= 1;
+
+                if (health < 0) {
+                    SceneManager.LoadScene("hub_world");
+                }
             }
         }
+
+
 
         void TakeDamage(int damage) {
 

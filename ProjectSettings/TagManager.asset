@@ -15,6 +15,7 @@ TagManager:
   - Destroyer
   - Wall
   - door
+  - enemy
   layers:
   - Default
   - TransparentFX
