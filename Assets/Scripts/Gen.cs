@@ -8,7 +8,8 @@ public class Gen : MonoBehaviour
     public GameObject door;
     public GameObject vertical_wall;
     public GameObject horizontal_wall;
-    public float roomSize;
+    public float roomSize; 
+    private int rand;
     // Start is called before the first frame update
     void Start()
     {
@@ -194,9 +195,8 @@ public class Gen : MonoBehaviour
 
         foreach(Vector2Int s in spawned)
         {
-        	//float rand = Random.Range(0, templates.floors.Length);
-            // Instantiate(templates.bottomRooms[rand], transform.position, templates.bottomRooms[rand].transform.rotation);
-            GameObject g = Instantiate(floor);
+        	rand = Random.Range(0, TileManager.instance.floors.Length);
+            GameObject g = Instantiate(TileManager.instance.floors[rand]);
             g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
         }
 
@@ -218,12 +218,14 @@ public class Gen : MonoBehaviour
                 {
                     if (dd == dir.Down || dd == dir.Up)
                     {
-                        GameObject g = Instantiate(horizontal_wall);
+                    	rand = Random.Range(0, TileManager.instance.horizontalWalls.Length);
+                        GameObject g = Instantiate(TileManager.instance.horizontalWalls[rand]);
                         g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
                     }
                     else 
                     {
-                        GameObject g = Instantiate(vertical_wall);
+                    	rand = Random.Range(0, TileManager.instance.verticalWalls.Length);
+                        GameObject g = Instantiate(TileManager.instance.verticalWalls[rand]);
                         g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
                     }
                 }

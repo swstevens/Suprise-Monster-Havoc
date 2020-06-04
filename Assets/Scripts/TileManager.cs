@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class newRoomTemplates : MonoBehaviour
+public class TileManager : MonoBehaviour
 {
+    public static TileManager instance;
+	void Awake()
+	{
+		instance = this;
+	}	
 	public GameObject[] verticalWalls;
 	public GameObject[] horizontalWalls;
 	public GameObject[] floors;
