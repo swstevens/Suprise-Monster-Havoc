@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
+  ammo: {fileID: 0}
   fpsCam: {fileID: 6663911167993258334}
   bullets: 30
 --- !u!1 &6663911167991227260
@@ -177,14 +178,13 @@ MonoBehaviour:
   activeWeapon: {fileID: 0}
   currentExtraBullets: 0
   maxExtraBullets: 100
-  gunFire: {fileID: 0}
-  gunFireClip: {fileID: 0}
   MuzzleFlashObject: {fileID: 0}
   MuzzleFlashTimer: 0.1
   muzzleFlashEnabled: 0
   gunSound: {fileID: 0}
   reloadTextObject: {fileID: 0}
   needReload: 0
+  hitImage: {fileID: 0}
 --- !u!1 &6663911167991227262
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

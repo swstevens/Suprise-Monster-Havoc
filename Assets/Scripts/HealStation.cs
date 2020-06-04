@@ -9,6 +9,10 @@ public class HealStation : MonoBehaviour
     private bool active = true;
     public Transform player;
     public Text dialogue;
+    public GameObject stationLight;
+    
+	public AudioSource healSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,18 +29,35 @@ public class HealStation : MonoBehaviour
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 toOther = player.position - transform.position;
             Debug.Log(Vector3.Dot(forward.normalized,toOther.normalized));
-            if (Vector3.Dot(forward,toOther) > .5)
+            if (Vector3.Dot(forward,toOther) >= .5)
             {
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
-                    Debug.Log("Player has been healed");
-                    PlayerManager.instance.hp += 50;
-                    if (PlayerManager.instance.hp >100)
-                    {
-                        PlayerManager.instance.hp = 100;
-                    }
-                    dialogue.text = "You have been healed!";
-                    active = false;
+
+                	if (PlayerManager.instance.hp == 100) {
+
+                		dialogue.text = "HP Already Full";
+                		// for debugging
+                		//PlayerManager.instance.hp -= 50;
+
+                	} else {
+
+                		Debug.Log("Player has been healed");
+	                    PlayerManager.instance.hp += 50;
+	                    if (PlayerManager.instance.hp >100) {
+
+	                        PlayerManager.instance.hp = 100;
+	                    }
+
+	                    healSound.Play();
+	                    dialogue.text = "You have been healed!";
+	                    active = false;
+                	}  
+
+                	if (active == false) {
+
+                		stationLight.SetActive(false);
+                	}
                 }
             }
             // if looking at the terminal (dot product)
@@ -55,7 +76,7 @@ public class HealStation : MonoBehaviour
         }
         if (active) 
         {
-            dialogue.text = "Get close to the monitor and press E to heal!";
+            dialogue.text = "Heal (E)";
         }
     }
 
