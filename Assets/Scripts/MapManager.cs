@@ -9,8 +9,6 @@ public class MapManager : MonoBehaviour
 	{
 		instance = this;
 	}
-	public int i = 1;
-	public int mapLimit = 10;
 	public string currentlevel;
 	public string nextLevel;
 }

@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e606d4267954d6419205a1656bd4cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 1487763379}
   teleportSound: {fileID: 0}
 --- !u!82 &190267757
 AudioSource:
@@ -3027,8 +3027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eeeb19fe5e4fa044ace9687d0534df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 1
-  mapLimit: 30
   currentlevel: hard_level
   nextLevel: hub_world
 --- !u!114 &1185058865
@@ -3045,7 +3043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numEnemies: 0
   enemyHP: 60
-  enemyCount: {fileID: 0}
+  enemyCount: {fileID: 804178255}
   damage: 35
 --- !u!114 &1185058866
 MonoBehaviour:
