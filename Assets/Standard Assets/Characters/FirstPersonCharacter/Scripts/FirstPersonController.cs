@@ -300,8 +300,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (other.gameObject.CompareTag("enemy"))
             {
                 Debug.Log("Taking damage");
+
+                //PlayerManager.instance.hp -= 1;
                 health -= 1;
-                healthbar.value = health;
+                healthbar.value -= 1;
+                //hp = health;
 
                 if (health < 0) {
                     SceneManager.LoadScene("hub_world");

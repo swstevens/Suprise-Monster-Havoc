@@ -2519,7 +2519,7 @@ MonoBehaviour:
   horizontalWalls:
   - {fileID: 4567294659982414706, guid: dfabf65608c2823428cdc59ee850031a, type: 3}
   floors:
-  - {fileID: 9011791138191075834, guid: 769cdd76949dc244197636273424cafe, type: 3}
+  - {fileID: 9011791138191075834, guid: c19a6cbbc8f047048bfe57d904a56a85, type: 3}
   enemy: {fileID: 1783563462218004, guid: 7f931d4b5c97d194d8726ddf5acdd440, type: 3}
   elevator: {fileID: 4111560390236476133, guid: 1894002f641e17d4fb09a9634e018763,
     type: 3}
