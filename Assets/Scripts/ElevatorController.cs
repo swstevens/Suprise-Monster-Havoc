@@ -31,7 +31,7 @@ public class ElevatorController : MonoBehaviour
     {
     	if (inRange)
     	{
-    		if (EnemyManager.instance.numEnemies >= 0)
+    		if (EnemyManager.instance.numEnemies <= 0)
     		{
     			if (Input.GetKeyDown(KeyCode.E))
     			{

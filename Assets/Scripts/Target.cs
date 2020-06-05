@@ -8,6 +8,8 @@ public class Target : MonoBehaviour
 	public float health;
 	public AudioSource deathSound;
 
+	public bool hit;
+
     Animator anim;
 
 	int damageHash = Animator.StringToHash ("Take Damage");
@@ -21,6 +23,8 @@ public class Target : MonoBehaviour
 
 	public void TakeDamage(float damage) {
 
+		hit = true;
+		
 		anim.ResetTrigger(damageHash);
 
 		health -= damage;

@@ -19,11 +19,11 @@ public class AIController : MonoBehaviour {
     private float vocalTimer = 2.0f;
     //private bool moving;
 
+    public bool hit;
+
     Animator anim;
     int moveHash = Animator.StringToHash ("Walk Forward");
     int attackHash = Animator.StringToHash ("Stab Attack");
-
-    //trans = GetComponent<Transform>;
 
     void Start() 
     {
@@ -37,6 +37,7 @@ public class AIController : MonoBehaviour {
  
     void Update() 
     {
+ 
         //transform.LookAt(Player);
         distance = Vector3.Distance(target.position, transform.position);
 

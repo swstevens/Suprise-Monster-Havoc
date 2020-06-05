@@ -1443,11 +1443,27 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Welcome to Surprise Monster HAVOC! The proceduraly-generated, monster-killing
-    FPS game. Here's how to play:\n\nWASD - Movement\nE - Use\nR - Reload\nLeft Click
-    - Shoot\n\nThere is one refuel station per level that will give you 50 health
-    and 30 bullets. Thankfully, your space ship can still reconstruct your body if
-    you die. \n\nGood luck, and embrace the HAVOC!"
+  m_text: 'Welcome to Surprise Monster HAVOC! The proceduraly-generated, monster-killing
+    FPS game. Here''s how to play:
+
+
+    WASD - Movement
+
+    SHIFT - Sprint
+
+    E - Activate
+
+    R - Reload
+
+    Left Click - Shoot
+
+
+    There are two refuel stations per level that will give you 50 health. When you
+    defeat all the monsters, you can go back to your ship with the blue teleporter.
+    If you die, you will come back with your body reconstructed on your ship.
+
+
+    Good luck, and embrace the HAVOC!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1475,8 +1491,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1492,7 +1508,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 297
+  m_firstOverflowCharacterIndex: 397
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1516,10 +1532,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: -12.538605, z: 3.2200012, w: 5.419113}
   m_textInfo:
     textComponent: {fileID: 682038551}
-    characterCount: 354
+    characterCount: 431
     spriteCount: 0
-    spaceCount: 64
-    wordCount: 61
+    spaceCount: 79
+    wordCount: 77
     linkCount: 0
     lineCount: 18
     pageCount: 1
@@ -1709,7 +1725,6 @@ MonoBehaviour:
   easScore: {fileID: 0}
   medScore: {fileID: 0}
   harScore: {fileID: 0}
-  light: {fileID: 0}
 --- !u!65 &900085785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2499,7 +2514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1328069098
@@ -3035,10 +3050,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 130.99887}
   m_textInfo:
     textComponent: {fileID: 1537095001}
-    characterCount: 5
+    characterCount: 11
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1

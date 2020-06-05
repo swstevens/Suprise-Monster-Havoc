@@ -40,7 +40,7 @@ public class HardLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
-                    harScore.SetActive(true);
+                    //harScore.SetActive(true);
 	            	SceneManager.LoadScene("hard_level");
                 }
             }

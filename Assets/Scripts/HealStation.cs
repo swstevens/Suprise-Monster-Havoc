@@ -21,6 +21,7 @@ public class HealStation : MonoBehaviour
         active = true;
         inRange = false;
         dialogue = MapManager.instance.dialogue;
+        dialogue.text = "";
     }
 
     // Update is called once per frame
@@ -76,9 +77,10 @@ public class HealStation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered trigger");
+            //Debug.Log("Player entered trigger");
             inRange = true;
         }
+
         if (active) 
         {
             dialogue.text = "Heal (E)";
@@ -89,7 +91,7 @@ public class HealStation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player left trigger");
+            //Debug.Log("Player left trigger");
             inRange = false;
             dialogue.text = "";
         }

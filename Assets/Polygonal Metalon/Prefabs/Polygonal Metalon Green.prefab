@@ -1190,8 +1190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f39e3d82446fd4a907ddcb7c5121d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 30
   deathSound: {fileID: 316635377366458878}
+  hit: 0
 --- !u!136 &6127096835407394275
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1219,10 +1220,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 7
-  MaxDist: 25
+  MaxDist: 30
   distance: 0
   MinDist: 3.5
   vocal: {fileID: 5247223417305885746}
+  hit: 0
 --- !u!54 &83493887752040170
 Rigidbody:
   m_ObjectHideFlags: 0

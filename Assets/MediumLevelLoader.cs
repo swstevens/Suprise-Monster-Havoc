@@ -39,7 +39,7 @@ public class MediumLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
-                	medScore.SetActive(true);
+                	//medScore.SetActive(true);
 	            	SceneManager.LoadScene("medium_level");
                 }
             }

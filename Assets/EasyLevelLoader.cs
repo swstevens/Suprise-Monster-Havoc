@@ -36,7 +36,7 @@ public class EasyLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
-                    easScore.SetActive(true);
+                    //easScore.SetActive(true);
 	            	SceneManager.LoadScene("easy_level");
                 }
             }
