@@ -10,6 +10,13 @@ public class EasyLevelLoader : MonoBehaviour
     private bool active = true;
     public Transform player;
     public Text dialogue;
+
+    public GameObject easScore;
+    public GameObject medScore;
+    public GameObject harScore;
+
+    public GameObject light;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +38,7 @@ public class EasyLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
+                    easScore.SetActive(true);
 	            	SceneManager.LoadScene("easy_level");
                 }
             }

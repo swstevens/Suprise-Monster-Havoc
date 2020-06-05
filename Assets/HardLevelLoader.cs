@@ -11,6 +11,13 @@ public class HardLevelLoader : MonoBehaviour
     private bool active = true;
     public Transform player;
     public Text dialogue;
+
+    public GameObject easScore;
+    public GameObject medScore;
+    public GameObject harScore;
+
+    public GameObject light;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +28,13 @@ public class HardLevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (medScore.activeSelf) {
+
+            active = true;
+            light.SetActive(true);
+        }
+
         if (inRange)
         {
             //player = PlayerManager.instance.player.transform;
@@ -32,6 +46,7 @@ public class HardLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
+                    harScore.SetActive(true);
 	            	SceneManager.LoadScene("hard_level");
                 }
             }

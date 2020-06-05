@@ -277,6 +277,11 @@ PrefabInstance:
       propertyPath: reloadSound
       value: 
       objectReference: {fileID: 1594773428}
+    - target: {fileID: 6663911166351878703, guid: db596ed9540375642879afcb74a4b20e,
+        type: 3}
+      propertyPath: maxExtraBullets
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6663911166147381066, guid: db596ed9540375642879afcb74a4b20e,
         type: 3}
       propertyPath: Gun_Barrel

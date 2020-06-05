@@ -10,6 +10,13 @@ public class MediumLevelLoader : MonoBehaviour
     private bool active = true;
     public Transform player;
     public Text dialogue;
+
+    public GameObject easScore;
+    public GameObject medScore;
+    public GameObject harScore;
+
+    public GameObject light;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +27,12 @@ public class MediumLevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    	if (easScore.activeSelf) {
+
+    		active = true;
+    		light.SetActive(true);
+    	}
+
         if (inRange)
         {
             //player = PlayerManager.instance.player.transform;
@@ -31,6 +44,7 @@ public class MediumLevelLoader : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
+                	medScore.SetActive(true);
 	            	SceneManager.LoadScene("medium_level");
                 }
             }

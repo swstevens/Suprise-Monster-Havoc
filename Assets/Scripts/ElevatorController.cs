@@ -68,6 +68,7 @@ public class ElevatorController : MonoBehaviour
             Debug.Log("Player entered trigger");
             inRange = true;
         }
+        
         dialogue.text = "hello";
         if (EnemyManager.instance.numEnemies > 0) 
         {

@@ -9,14 +9,29 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     public Slider healthbar;
 
+    private string hubWorld;
+
     void Start()
     {
-    	healthbar.value = PlayerManager.instance.hp;
+        hubWorld = SceneManager.GetActiveScene().name;
+
+        if (hubWorld != "hub_world") {
+
+            healthbar.value = PlayerManager.instance.hp;
+        }
+
+        else {
+
+            healthbar.value = 100;
+        }
     }
 
     void Update()
     {
-    	healthbar.value = PlayerManager.instance.hp;
+        if (hubWorld != "hub_world") {
+
+            healthbar.value = PlayerManager.instance.hp;
+        }
     }
 
     void OnTriggerStay(Collider other)
