@@ -32,12 +32,13 @@ public class AttackController : MonoBehaviour
     private RaycastHit hit;
 
     public GameObject MuzzleFlashObject;
-    public float MuzzleFlashTimer = 0.1f;
+    private float MuzzleFlashTimer = 0.1f;
     private float MuzzleFlashTimerStart;
     public bool muzzleFlashEnabled = false;
 
     public AudioSource gunSound;
-
+    public AudioSource reloadSound;
+    
     public GameObject reloadTextObject;
     public bool needReload = false;
 
@@ -195,6 +196,8 @@ public class AttackController : MonoBehaviour
         {
             return;
         }
+
+        reloadSound.Play();
 
         // The first thing we need to know 
         // is how many bullets we can 

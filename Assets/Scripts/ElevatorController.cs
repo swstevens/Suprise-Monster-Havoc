@@ -10,6 +10,10 @@ public class ElevatorController : MonoBehaviour
 	private bool inRange = false;
 	private string leveltoload;
 
+	public AudioSource teleportSound;
+	private float teleportTimer = 4f;
+    private float teleportTimerStart;
+    private bool teleportInitiated;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +29,29 @@ public class ElevatorController : MonoBehaviour
     		{
     			if (Input.GetKeyDown(KeyCode.E))
     			{
-    				dialogue.text = "Level Progressed";
-    				SceneManager.LoadScene(leveltoload, LoadSceneMode.Single);
-    				//load medium level, broken for now
-    				SceneManager.LoadScene("hub_world");
+
+    				teleportInitiated = true;
+    				teleportSound.Play();
     			}
     		}
+    	}
+
+    	if (teleportInitiated) {
+
+    		dialogue.text = "Level Cleared!";
+			teleportTimer -= Time.deltaTime;
+
+			if (teleportTimer <= 2) {
+
+				dialogue.text = "Teleporting...";
+			}
+
+			if (teleportTimer <= 0) {
+
+				teleportInitiated = false;
+				teleportTimer = 4;
+				SceneManager.LoadScene("hub_world");
+			}
     	}
     }
 
