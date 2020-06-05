@@ -12,4 +12,6 @@ public class TileManager : MonoBehaviour
 	public GameObject[] verticalWalls;
 	public GameObject[] horizontalWalls;
 	public GameObject[] floors;
+	public GameObject enemy;
+	public GameObject elevator;
 }

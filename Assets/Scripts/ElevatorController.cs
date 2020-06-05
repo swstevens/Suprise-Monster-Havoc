@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ElevatorController : MonoBehaviour
 {
-	public Text dialogue;
+	private Text dialogue;
 	private bool inRange = false;
 	private string leveltoload;
 
@@ -17,6 +17,7 @@ public class ElevatorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogue = MapManager.instance.dialogue;
         leveltoload = MapManager.instance.nextLevel;
         dialogue.text = "";
     }

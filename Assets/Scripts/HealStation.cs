@@ -8,7 +8,7 @@ public class HealStation : MonoBehaviour
     private bool inRange;
     private bool active = true;
     public Transform player;
-    public Text dialogue;
+    private Text dialogue;
     public GameObject stationLight;
     
 	public AudioSource healSound;
@@ -16,6 +16,7 @@ public class HealStation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogue = MapManager.instance.dialogue;
         active = true;
         inRange = false;
     }

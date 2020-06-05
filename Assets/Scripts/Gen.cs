@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Gen : MonoBehaviour
 {
-    public GameObject floor;
     public GameObject door;
-    public GameObject vertical_wall;
-    public GameObject horizontal_wall;
+    public GameObject enemyModel;
     public float roomSize; 
     private int rand;
+    private bool eSpawned;
     // Start is called before the first frame update
     void Start()
     {
+    	eSpawned = false;
         spawned.Add(new Vector2Int());
         occupied.Add(new Vector2Int());
         longest = UUID;
@@ -26,7 +26,7 @@ public class Gen : MonoBehaviour
 
 
 
-    static int UUID = 0;
+    static int UUID = 0; // for floor tiles
     int longest = 0;
     public Dictionary<Vector2Int, int> tiles = new Dictionary<Vector2Int, int>();
     public Dictionary<Vector2Int, HashSet<Vector2Int>> connections = new Dictionary<Vector2Int, HashSet<Vector2Int>>();
@@ -37,6 +37,8 @@ public class Gen : MonoBehaviour
     public int searchTime = 2;
     public int spreadTime = 5;
     public float giveUpChance = 0.9f;
+    public float ElevatorChance = .08f;
+    public float enemyChance = .1f;
     public bool searchMode = false;
     public bool CM = false;
     public int credits = 20;
@@ -199,6 +201,24 @@ public class Gen : MonoBehaviour
             GameObject g = Instantiate(TileManager.instance.floors[rand]);
             g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
         }
+        //Vector2Int origin = new Vector2Int(0,0);
+        foreach(Vector2Int s in spawned)
+        {
+        	// check if there are any nearby occupied? spaces
+        	if (Random.Range(0,1f) <= ElevatorChance && eSpawned == false)
+        	{
+	            GameObject g = Instantiate(TileManager.instance.elevator);
+				g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+				eSpawned = true;
+        	}
+        	else if (Random.Range(0,1f) <= enemyChance)
+        	{
+        		// add if distance from 0,0,0 is larger than 10? idk something
+        		GameObject g = Instantiate(TileManager.instance.enemy);
+            	g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+            	EnemyManager.instance.numEnemies++;
+        	}
+        }
 
         HashSet<Vector2Int> alreadyConsidered = new HashSet<Vector2Int>();
         // Now for the doors and walls, uses "generate a door is nearby"
@@ -210,12 +230,16 @@ public class Gen : MonoBehaviour
                 // spawn doors
                 if(IsThere(s, dd) && !alreadyConsidered.Contains(add(s,dd)) && spawned.Contains(add(s,dd)))
                 {    
+                    // GameObject x = Instantiate(TileManager.instance.enemy);
+                    // x.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+                    // for testing to see if I can identify corridors
                     GameObject g = Instantiate(door);
                     g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
                 }
                 // spawn walls
                 if(!alreadyConsidered.Contains(add(s,dd)) && !spawned.Contains(add(s,dd)))
                 {
+                	//add extra if case here for heal station spawning (if chance met and number of spawned elevator < limit)
                     if (dd == dir.Down || dd == dir.Up)
                     {
                     	rand = Random.Range(0, TileManager.instance.horizontalWalls.Length);
