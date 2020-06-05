@@ -286,7 +286,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ammo
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1433773986}
     - target: {fileID: 3885334541653668872, guid: db596ed9540375642879afcb74a4b20e,
         type: 3}
       propertyPath: hp
@@ -309,6 +309,12 @@ PrefabInstance:
       objectReference: {fileID: 573301742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db596ed9540375642879afcb74a4b20e, type: 3}
+--- !u!1 &16052170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6663911167991227262, guid: db596ed9540375642879afcb74a4b20e,
+    type: 3}
+  m_PrefabInstance: {fileID: 16052169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85986193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,9 +2454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac7976e4f709fe40bbb74d0c87f9b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 16052170}
   hp: 100
-  health: {fileID: 0}
+  health: {fileID: 1324227147}
 --- !u!4 &1185058863
 Transform:
   m_ObjectHideFlags: 0

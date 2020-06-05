@@ -21,6 +21,8 @@ public class AIController : MonoBehaviour {
     int moveHash = Animator.StringToHash ("Walk Forward");
     int attackHash = Animator.StringToHash ("Stab Attack");
 
+    //trans = GetComponent<Transform>;
+
     void Start() 
     {
     	//agent = GetComponent<NavMeshAgent>();
@@ -54,14 +56,14 @@ public class AIController : MonoBehaviour {
 
  			anim.ResetTrigger(attackHash);
 
+ 			anim.SetTrigger(moveHash);
+
 			Vector3 direction = (target.position - transform.position).normalized;
 			Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
-            anim.SetTrigger(moveHash);
-
+ 
         } else {
 
         	anim.ResetTrigger(moveHash);

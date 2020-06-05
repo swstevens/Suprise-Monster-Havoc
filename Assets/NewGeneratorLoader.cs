@@ -13,8 +13,8 @@ public class NewGeneratorLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        leveltoload = MapManager.instance.nextLevel;
-        dialogue.text = "";
+        //leveltoload = MapManager.instance.nextLevel;
+        //dialogue.text = "";
     }
 
     void Update()
