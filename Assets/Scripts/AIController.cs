@@ -15,6 +15,8 @@ public class AIController : MonoBehaviour {
     public float MinDist = 2f;
     private int damage;
 
+    public AudioSource vocal;
+    private float vocalTimer = 2.0f;
     //private bool moving;
 
     Animator anim;
@@ -54,6 +56,13 @@ public class AIController : MonoBehaviour {
  			//agent.SetDestination(target.position);
 			// need to figure out how to make navmeshes
 
+ 			vocalTimer -= Time.deltaTime;
+
+ 			if (vocalTimer <= 1) {
+
+ 				vocal.Play();
+ 				vocalTimer = 2.0f;
+ 			}
  			anim.ResetTrigger(attackHash);
 
  			anim.SetTrigger(moveHash);

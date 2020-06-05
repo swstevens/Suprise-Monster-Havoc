@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,8 +15,6 @@ public class EasyLevelLoader : MonoBehaviour
     public GameObject medScore;
     public GameObject harScore;
 
-    public GameObject light;
-    
     // Start is called before the first frame update
     void Start()
     {

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Target : MonoBehaviour
 {
 	public float health;
+	public AudioSource deathSound;
 
     Animator anim;
 
@@ -26,6 +27,8 @@ public class Target : MonoBehaviour
 
 		if (health <= 0f)
 		{
+
+			deathSound.Play();
 			Die();
 
 		} else {
@@ -40,6 +43,5 @@ public class Target : MonoBehaviour
 		anim.SetTrigger(dieHash);
 		EnemyManager.instance.numEnemies--;
 		Destroy(gameObject);
-		// spawn a weapon type
 	}
 }
