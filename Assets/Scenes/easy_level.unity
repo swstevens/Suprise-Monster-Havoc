@@ -373,7 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e606d4267954d6419205a1656bd4cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 1091520732}
   teleportSound: {fileID: 190267757}
 --- !u!82 &190267757
 AudioSource:
@@ -490,7 +489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 950289074}
-  dialogue: {fileID: 1091520732}
   stationLight: {fileID: 1635780903}
   healSound: {fileID: 0}
 --- !u!82 &221468605
@@ -3056,6 +3054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentlevel: easy_level
   nextLevel: medium_level
+  dialogue: {fileID: 1091520732}
 --- !u!114 &1185058865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3090,6 +3089,9 @@ MonoBehaviour:
   - {fileID: 4567294659982414706, guid: dfabf65608c2823428cdc59ee850031a, type: 3}
   floors:
   - {fileID: 9011791138191075834, guid: 769cdd76949dc244197636273424cafe, type: 3}
+  enemy: {fileID: 1783563462218004, guid: 7f931d4b5c97d194d8726ddf5acdd440, type: 3}
+  elevator: {fileID: 4111560390236476133, guid: 1894002f641e17d4fb09a9634e018763,
+    type: 3}
 --- !u!1 &1188566353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,16 +3466,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf9cd4cebd7ff843bbc41a0180bc12c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floor: {fileID: 9011791138191075834, guid: 769cdd76949dc244197636273424cafe, type: 3}
   door: {fileID: 9055313295822926285, guid: 7e8539328e9f1a44985d0d7a5ce57958, type: 3}
-  vertical_wall: {fileID: 5068848643041021662, guid: cef92607bcb0261429ace316f946cf5d,
-    type: 3}
-  horizontal_wall: {fileID: 4567294659982414706, guid: dfabf65608c2823428cdc59ee850031a,
-    type: 3}
+  enemyModel: {fileID: 1783563462218004, guid: 7f931d4b5c97d194d8726ddf5acdd440, type: 3}
   roomSize: 4
   searchTime: 4
   spreadTime: 3
   giveUpChance: 0.5
+  ElevatorChance: 0.08
+  enemyChance: 0.1
   searchMode: 0
   CM: 0
   credits: 100

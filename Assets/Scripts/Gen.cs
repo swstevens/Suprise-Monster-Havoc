@@ -204,7 +204,7 @@ public class Gen : MonoBehaviour
         //Vector2Int origin = new Vector2Int(0,0);
         foreach(Vector2Int s in spawned)
         {
-        	// check if there are any nearby occupied? spaces
+    //     	check if there are any nearby occupied? spaces
         	if (Random.Range(0,1f) <= ElevatorChance && eSpawned == false)
         	{
 	            GameObject g = Instantiate(TileManager.instance.elevator);
