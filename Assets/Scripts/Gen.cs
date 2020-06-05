@@ -216,7 +216,6 @@ public class Gen : MonoBehaviour
         		// add if distance from 0,0,0 is larger than 10? idk something
         		GameObject g = Instantiate(TileManager.instance.enemy);
             	g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
-            	EnemyManager.instance.numEnemies++;
         	}
         }
 
