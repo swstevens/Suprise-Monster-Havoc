@@ -285,6 +285,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &186593201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6663911167991227262, guid: db596ed9540375642879afcb74a4b20e,
+    type: 3}
+  m_PrefabInstance: {fileID: 591570453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &221468601 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 169896, guid: 897c9b0e5e04118499e0903c7754628f,
@@ -1475,7 +1481,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 591570453}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 186593201}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
@@ -2838,9 +2844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac7976e4f709fe40bbb74d0c87f9b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 186593201}
   hp: 100
-  health: {fileID: 0}
+  health: {fileID: 540033421}
 --- !u!4 &1185058863
 Transform:
   m_ObjectHideFlags: 0
