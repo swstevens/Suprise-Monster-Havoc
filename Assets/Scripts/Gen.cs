@@ -213,11 +213,16 @@ public class Gen : MonoBehaviour
         	}
         	else if (Random.Range(0,1f) <= enemyChance)
         	{
-        		// add if distance from 0,0,0 is larger than 10? idk something
-        		GameObject g = Instantiate(TileManager.instance.enemy);
-            	g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+        		if (Mathf.Abs(s.x)>= 4 && Mathf.Abs(s.y) >= 4)
+        		{
+        			// add if distance from 0,0,0 is larger than 10? idk something
+        			GameObject g = Instantiate(TileManager.instance.enemy);
+            		g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+        		}
         	}
         }
+        // there's a chance that the player low rolls and never gets an elevator with this system
+        // will need to add a safety system possibly (only concern is it might spawn on top of an enemy though)
 
         HashSet<Vector2Int> alreadyConsidered = new HashSet<Vector2Int>();
         // Now for the doors and walls, uses "generate a door is nearby"
