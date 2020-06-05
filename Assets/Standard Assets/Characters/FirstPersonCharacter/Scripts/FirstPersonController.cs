@@ -45,18 +45,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
-
-        public int maxHealth = 100;
-        public int currentHealth;
-        public Slider healthbar;
-
-
         public Text hp;
         public int health = 100;
-
+        public Slider healthbar;
 
         public GameObject enemy;
         // Use this for initialization
+
         private void Start()
         {
             m_CharacterController = GetComponent<CharacterController>();
@@ -70,8 +65,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 
-            currentHealth = maxHealth;
-            //healthbar.value = currentHealth;
+            healthbar.value = health;
 
         }
 
@@ -307,19 +301,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 Debug.Log("Taking damage");
                 health -= 1;
+                healthbar.value = health;
 
                 if (health < 0) {
                     SceneManager.LoadScene("hub_world");
                 }
             }
-        }
-
-
-
-        void TakeDamage(int damage) {
-
-            currentHealth -= damage;
-            healthbar.value = currentHealth;
-        }
-    }   
+        }  
+    }
 }

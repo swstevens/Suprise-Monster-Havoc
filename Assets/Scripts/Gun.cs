@@ -10,7 +10,6 @@ public class Gun : MonoBehaviour
 
 	public Text ammo;
 
-
 	public Camera fpsCam;
 
 	public int bullets = 30;

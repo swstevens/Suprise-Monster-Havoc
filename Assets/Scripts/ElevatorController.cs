@@ -14,6 +14,11 @@ public class ElevatorController : MonoBehaviour
 	private float teleportTimer = 4f;
     private float teleportTimerStart;
     private bool teleportInitiated;
+
+    Animator anim;
+
+	int shootHash = Animator.StringToHash ("Shoot");
+    //int dieHash = Animator.StringToHash ("Die");
     // Start is called before the first frame update
     void Start()
     {
