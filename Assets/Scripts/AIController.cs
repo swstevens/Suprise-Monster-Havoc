@@ -70,11 +70,12 @@ public class AIController : MonoBehaviour {
         }
     }
 
-    void onTriggerEnter(Collider other)
+    void onTriggerStay(Collider other)
     {
-    	if (other.CompareTag("Player"))
+    	if (other.gameObject.CompareTag("Player"))
     	{
-    		PlayerManager.instance.hp -= 0;
+    		PlayerManager.instance.hp -= 1;
+            Debug.Log(PlayerManager.instance.hp);
     	}
     }
 

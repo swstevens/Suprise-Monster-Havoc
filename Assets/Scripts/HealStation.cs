@@ -10,7 +10,7 @@ public class HealStation : MonoBehaviour
     public Transform player;
     private Text dialogue;
     public GameObject stationLight;
-    
+    public Slider healthbar;
 	public AudioSource healSound;
 
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class HealStation : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
                 {
 
-                	if (PlayerManager.instance.hp == 100) {
+                	if (PlayerManager.instance.hp >= 100) {
 
                 		dialogue.text = "HP Already Full";
                 		// for debugging
@@ -44,13 +44,15 @@ public class HealStation : MonoBehaviour
                 	} else {
 
                 		Debug.Log("Player has been healed");
-	                    PlayerManager.instance.hp += 50;
+	                    healthbar.value+= 50;
+
+                        PlayerManager.instance.hp += 50;
 	                    if (PlayerManager.instance.hp >100) {
 
 	                        PlayerManager.instance.hp = 100;
 	                    }
 
-	                    healSound.Play();
+	                    //healSound.Play();
 	                    dialogue.text = "You have been healed!";
 	                    active = false;
                 	}  

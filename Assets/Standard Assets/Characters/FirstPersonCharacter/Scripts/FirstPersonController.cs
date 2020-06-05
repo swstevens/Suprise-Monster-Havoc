@@ -65,7 +65,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 
-            healthbar.value = health;
+            //healthbar.value = health;
 
         }
 
@@ -295,21 +295,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-        void OnTriggerStay(Collider other)
-        {
-            if (other.gameObject.CompareTag("enemy"))
-            {
-                Debug.Log("Taking damage");
+        // void OnTriggerStay(Collider other)
+        // {
+        //     if (other.gameObject.CompareTag("enemy"))
+        //     {
+        //         Debug.Log("Taking damage");
 
-                //PlayerManager.instance.hp -= 1;
-                health -= 1;
-                healthbar.value -= 1;
-                //hp = health;
+        //         //PlayerManager.instance.hp -= 1;
+        //         health -= 1;
+        //         healthbar.value -= 1;
+        //         //hp = health;
 
-                if (health < 0) {
-                    SceneManager.LoadScene("hub_world");
-                }
-            }
-        }  
+        //         if (health < 0) {
+        //             SceneManager.LoadScene("hub_world");
+        //         }
+        //     }
+        // }  
     }
 }
