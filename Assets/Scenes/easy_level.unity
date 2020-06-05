@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 1711529303}
   stationLight: {fileID: 0}
   healSound: {fileID: 0}
 --- !u!65 &221468606
@@ -2616,8 +2616,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eeeb19fe5e4fa044ace9687d0534df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 1
-  mapLimit: 10
   currentlevel: easy_level
   nextLevel: medium_level
 --- !u!114 &1185058865
@@ -2634,7 +2632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numEnemies: 0
   enemyHP: 20
-  enemyCount: {fileID: 0}
+  enemyCount: {fileID: 408856364}
   damage: 10
 --- !u!114 &1185058866
 MonoBehaviour:
