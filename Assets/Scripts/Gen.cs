@@ -233,8 +233,8 @@ public class Gen : MonoBehaviour
                     // GameObject x = Instantiate(TileManager.instance.enemy);
                     // x.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
                     // for testing to see if I can identify corridors
-                    GameObject g = Instantiate(door);
-                    g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
+                    //GameObject g = Instantiate(door);
+                    //.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
                 }
                 // spawn walls
                 if(!alreadyConsidered.Contains(add(s,dd)) && !spawned.Contains(add(s,dd)))
