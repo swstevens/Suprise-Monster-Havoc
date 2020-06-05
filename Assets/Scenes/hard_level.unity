@@ -307,6 +307,11 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 573301742}
+    - target: {fileID: 4567735718932010807, guid: db596ed9540375642879afcb74a4b20e,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 573301742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db596ed9540375642879afcb74a4b20e, type: 3}
 --- !u!1 &16052170 stripped
@@ -613,6 +618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 993610349}
   stationLight: {fileID: 2087061789}
+  healthbar: {fileID: 573301742}
   healSound: {fileID: 221468607}
 --- !u!65 &221468606
 BoxCollider:

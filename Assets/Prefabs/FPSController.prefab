@@ -179,9 +179,9 @@ MonoBehaviour:
   currentExtraBullets: 0
   maxExtraBullets: 100
   MuzzleFlashObject: {fileID: 0}
-  MuzzleFlashTimer: 0.1
   muzzleFlashEnabled: 0
   gunSound: {fileID: 0}
+  reloadSound: {fileID: 0}
   reloadTextObject: {fileID: 0}
   needReload: 0
   hitImage: {fileID: 0}
@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 2457152174590762014}
   - component: {fileID: 6663911167980443326}
   - component: {fileID: 6663911167981541022}
+  - component: {fileID: 4567735718932010807}
   - component: {fileID: 6663911167988318238}
   - component: {fileID: 6663911167986809502}
   - component: {fileID: 380815693624528340}
@@ -368,12 +369,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
-  maxHealth: 100
-  currentHealth: 0
-  healthbar: {fileID: 0}
   hp: {fileID: 0}
   health: 100
+  healthbar: {fileID: 0}
   enemy: {fileID: 0}
+--- !u!114 &4567735718932010807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663911167991227262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6805dd9807c18774386635bb3bc04c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
 --- !u!54 &6663911167988318238
 Rigidbody:
   m_ObjectHideFlags: 0

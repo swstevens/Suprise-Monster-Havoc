@@ -272,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 429358510}
   stationLight: {fileID: 1470203408}
+  healthbar: {fileID: 1297622776}
   healSound: {fileID: 221468603}
 --- !u!82 &221468603
 AudioSource:
@@ -1011,6 +1012,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 246052208}
     - target: {fileID: 6663911167981541022, guid: db596ed9540375642879afcb74a4b20e,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1297622776}
+    - target: {fileID: 4567735718932010807, guid: db596ed9540375642879afcb74a4b20e,
         type: 3}
       propertyPath: healthbar
       value: 

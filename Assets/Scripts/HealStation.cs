@@ -26,43 +26,43 @@ public class HealStation : MonoBehaviour
     {
         if (inRange)
         {
-            //player = PlayerManager.instance.player.transform;
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            Vector3 toOther = player.position - transform.position;
-            Debug.Log(Vector3.Dot(forward.normalized,toOther.normalized));
-            if (Vector3.Dot(forward,toOther) >= .5)
+            // //player = PlayerManager.instance.player.transform;
+            // Vector3 forward = transform.TransformDirection(Vector3.forward);
+            // Vector3 toOther = player.position - transform.position;
+            // Debug.Log(Vector3.Dot(forward.normalized,toOther.normalized));
+            // if (Vector3.Dot(forward,toOther) >= .5)
+            // {
+            if (Input.GetKeyDown(KeyCode.E) && active == true)
             {
-                if (Input.GetKeyDown(KeyCode.E) && active == true)
-                {
 
-                	if (PlayerManager.instance.hp >= 100) {
+            	if (PlayerManager.instance.hp >= 100) {
 
-                		dialogue.text = "HP Already Full";
-                		// for debugging
-                		//PlayerManager.instance.hp -= 50;
+            		dialogue.text = "HP Already Full";
+            		// for debugging
+            		//PlayerManager.instance.hp -= 50;
 
-                	} else {
+            	} else {
 
-                		Debug.Log("Player has been healed");
-	                    healthbar.value+= 50;
+            		Debug.Log("Player has been healed");
+                    healthbar.value+= 50;
 
-                        PlayerManager.instance.hp += 50;
-	                    if (PlayerManager.instance.hp >100) {
+                    PlayerManager.instance.hp += 50;
+                    if (PlayerManager.instance.hp >100) {
 
-	                        PlayerManager.instance.hp = 100;
-	                    }
+                        PlayerManager.instance.hp = 100;
+                    }
 
-	                    //healSound.Play();
-	                    dialogue.text = "You have been healed!";
-	                    active = false;
-                	}  
+                    //healSound.Play();
+                    dialogue.text = "You have been healed!";
+                    active = false;
+            	}  
 
-                	if (active == false) {
+            	if (active == false) {
 
-                		stationLight.SetActive(false);
-                	}
-                }
+            		stationLight.SetActive(false);
+            	}
             }
+            // }
             // if looking at the terminal (dot product)
             // let the player press e to heal for 50
             // maybe play a sound when e gets pressed
