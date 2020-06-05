@@ -855,8 +855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb450425705df4946906b27df86070e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 6
-  MaxDist: 30
+  MoveSpeed: 5
+  MaxDist: 25
   distance: 0
   MinDist: 3.5
   vocal: {fileID: -663423149827010087}
