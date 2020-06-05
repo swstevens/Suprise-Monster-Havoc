@@ -3172,7 +3172,7 @@ MonoBehaviour:
   giveUpChance: 0.5
   healChance: 0.08
   ElevatorChance: 0.08
-  enemyChance: 0.1
+  enemyChance: 0.4
   searchMode: 0
   CM: 0
   credits: 100

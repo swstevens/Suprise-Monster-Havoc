@@ -202,8 +202,10 @@ public class Gen : MonoBehaviour
         foreach(Vector2Int s in spawned)
         {
         	rand = Random.Range(0, TileManager.instance.floors.Length);
-            GameObject g = Instantiate(TileManager.instance.floors[rand]);
-            g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+            // GameObject g = Instantiate(TileManager.instance.floors[rand]);
+            // g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+            Vector3 vector = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+            Instantiate(TileManager.instance.floors[rand], vector, TileManager.instance.floors[rand].transform.rotation);
         }
         //Vector2Int origin = new Vector2Int(0,0);
         foreach(Vector2Int s in spawned)
@@ -213,24 +215,33 @@ public class Gen : MonoBehaviour
         	{
         		if (Mathf.Abs(s.x) > 1 && Mathf.Abs(s.y) > 1) // don't spawn on top of player
         		{
-	            	GameObject g = Instantiate(TileManager.instance.elevator);
-					g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+	            	//GameObject g = Instantiate(TileManager.instance.elevator);
+					//g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+					Vector3 vector = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+					Instantiate(TileManager.instance.elevator, vector, TileManager.instance.elevator.transform.rotation);
 					eSpawned = true;
 				}
         	}
         	else if (Random.Range(0,1f) <= healChance && numHeals < maxHeals)
         	{
-	            GameObject g = Instantiate(TileManager.instance.healStation);
-				g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
-				numHeals++;
+        		if (Mathf.Abs(s.x) > 1 && Mathf.Abs(s.y) > 1) // don't spawn on top of player	
+        		{
+		            // GameObject g = Instantiate(TileManager.instance.healStation);
+					// g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+					Vector3 vector = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+					Instantiate(TileManager.instance.healStation, vector, TileManager.instance.healStation.transform.rotation);
+					numHeals++;
+				}
         	}
         	else if (Random.Range(0,1f) <= enemyChance)
         	{
         		if (Mathf.Abs(s.x)>= 4 && Mathf.Abs(s.y) >= 4)
         		{
         			// add if distance from 0,0,0 is larger than 10? idk something
-        			GameObject g = Instantiate(TileManager.instance.enemy);
-            		g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+        			// GameObject g = Instantiate(TileManager.instance.enemy);
+           //  		g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+					Vector3 vector = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+					Instantiate(TileManager.instance.enemy, vector, TileManager.instance.enemy.transform.rotation);
         		}
         	}
         }
@@ -260,14 +271,18 @@ public class Gen : MonoBehaviour
                     if (dd == dir.Down || dd == dir.Up)
                     {
                     	rand = Random.Range(0, TileManager.instance.horizontalWalls.Length);
-                        GameObject g = Instantiate(TileManager.instance.horizontalWalls[rand]);
-                        g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
+                        // GameObject g = Instantiate(TileManager.instance.horizontalWalls[rand]);
+                        // g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
+    					Vector3 vector = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
+						Instantiate(TileManager.instance.horizontalWalls[rand], vector, TileManager.instance.horizontalWalls[rand].transform.rotation);
                     }
                     else 
                     {
                     	rand = Random.Range(0, TileManager.instance.verticalWalls.Length);
-                        GameObject g = Instantiate(TileManager.instance.verticalWalls[rand]);
-                        g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
+                        // GameObject g = Instantiate(TileManager.instance.verticalWalls[rand]);
+                        // g.transform.position = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
+                        Vector3 vector = new Vector3(roomSize*s.x + roomSize/2*(add(s,dd)-s).x, 0f, roomSize*s.y + roomSize/2 * (add(s, dd) - s).y);
+                        Instantiate(TileManager.instance.verticalWalls[rand], vector, TileManager.instance.verticalWalls[rand].transform.rotation);
                     }
                 }
                 alreadyConsidered.Add(s);
