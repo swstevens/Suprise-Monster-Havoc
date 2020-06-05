@@ -7,16 +7,16 @@ public class HealStation : MonoBehaviour
 {
     private bool inRange;
     private bool active = true;
-    public Transform player;
-    private Text dialogue;
+    //public Transform player;
+    //private Text dialogue;
     public GameObject stationLight;
-    public Slider healthbar;
+    //public Slider healthbar;
 	public AudioSource healSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        dialogue = MapManager.instance.dialogue;
+        //dialogue = MapManager.instance.dialogue;
         active = true;
         inRange = false;
     }
@@ -37,14 +37,14 @@ public class HealStation : MonoBehaviour
 
             	if (PlayerManager.instance.hp >= 100) {
 
-            		dialogue.text = "HP Already Full";
+            		//dialogue.text = "HP Already Full";
             		// for debugging
             		//PlayerManager.instance.hp -= 50;
 
             	} else {
 
             		Debug.Log("Player has been healed");
-                    healthbar.value+= 50;
+                    //healthbar.value+= 50;
 
                     PlayerManager.instance.hp += 50;
                     if (PlayerManager.instance.hp >100) {
@@ -52,8 +52,8 @@ public class HealStation : MonoBehaviour
                         PlayerManager.instance.hp = 100;
                     }
 
-                    //healSound.Play();
-                    dialogue.text = "You have been healed!";
+                    healSound.Play();
+                    //dialogue.text = "You have been healed!";
                     active = false;
             	}  
 
@@ -79,7 +79,7 @@ public class HealStation : MonoBehaviour
         }
         if (active) 
         {
-            dialogue.text = "Heal (E)";
+            //dialogue.text = "Heal (E)";
         }
     }
 
@@ -89,7 +89,7 @@ public class HealStation : MonoBehaviour
         {
             Debug.Log("Player left trigger");
             inRange = false;
-            dialogue.text = "";
+            //dialogue.text = "";
         }
     }
 }

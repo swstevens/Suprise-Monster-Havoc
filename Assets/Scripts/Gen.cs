@@ -7,11 +7,14 @@ public class Gen : MonoBehaviour
     public GameObject door;
     public GameObject enemyModel;
     public float roomSize; 
+    private int numHeals;
+    public int maxHeals = 2;
     private int rand;
     private bool eSpawned;
     // Start is called before the first frame update
     void Start()
     {
+    	numHeals = 0;
     	eSpawned = false;
         spawned.Add(new Vector2Int());
         occupied.Add(new Vector2Int());
@@ -37,6 +40,7 @@ public class Gen : MonoBehaviour
     public int searchTime = 2;
     public int spreadTime = 5;
     public float giveUpChance = 0.9f;
+    public float healChance = .08f;
     public float ElevatorChance = .08f;
     public float enemyChance = .1f;
     public bool searchMode = false;
@@ -207,9 +211,18 @@ public class Gen : MonoBehaviour
     //     	check if there are any nearby occupied? spaces
         	if (Random.Range(0,1f) <= ElevatorChance && eSpawned == false)
         	{
-	            GameObject g = Instantiate(TileManager.instance.elevator);
+        		if (Mathf.Abs(s.x) > 1 && Mathf.Abs(s.y) > 1) // don't spawn on top of player
+        		{
+	            	GameObject g = Instantiate(TileManager.instance.elevator);
+					g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
+					eSpawned = true;
+				}
+        	}
+        	else if (Random.Range(0,1f) <= healChance && numHeals < maxHeals)
+        	{
+	            GameObject g = Instantiate(TileManager.instance.healStation);
 				g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
-				eSpawned = true;
+				numHeals++;
         	}
         	else if (Random.Range(0,1f) <= enemyChance)
         	{

@@ -14,4 +14,5 @@ public class TileManager : MonoBehaviour
 	public GameObject[] floors;
 	public GameObject enemy;
 	public GameObject elevator;
+	public GameObject healStation;
 }

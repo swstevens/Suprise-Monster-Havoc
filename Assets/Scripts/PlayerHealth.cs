@@ -14,6 +14,11 @@ public class PlayerHealth : MonoBehaviour
     	healthbar.value = PlayerManager.instance.hp;
     }
 
+    void Update()
+    {
+    	healthbar.value = PlayerManager.instance.hp;
+    }
+
     void OnTriggerStay(Collider other)
     {
 	if (other.gameObject.CompareTag("enemy"))
