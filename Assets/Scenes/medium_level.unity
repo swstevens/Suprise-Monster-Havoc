@@ -2145,7 +2145,7 @@ MonoBehaviour:
   - {fileID: 4567294659982414706, guid: dfabf65608c2823428cdc59ee850031a, type: 3}
   floors:
   - {fileID: 9011791138191075834, guid: e95c7afc1540d104b8027426cabaef5d, type: 3}
-  enemy: {fileID: 1783563462218004, guid: 7f931d4b5c97d194d8726ddf5acdd440, type: 3}
+  enemy: {fileID: 1462720695320296, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
   elevator: {fileID: 4111560390236476133, guid: 1894002f641e17d4fb09a9634e018763,
     type: 3}
   healStation: {fileID: 1147820492415375073, guid: 64411c3ca7a30b94092e8ac22dfebeb8,

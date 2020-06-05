@@ -63,6 +63,7 @@ public class AIController : MonoBehaviour {
  				vocal.Play();
  				vocalTimer = 2.0f;
  			}
+            
  			anim.ResetTrigger(attackHash);
 
  			anim.SetTrigger(moveHash);
@@ -84,7 +85,7 @@ public class AIController : MonoBehaviour {
     	if (other.gameObject.CompareTag("Player"))
     	{
     		PlayerManager.instance.hp -= 1;
-            Debug.Log(PlayerManager.instance.hp);
+            //Debug.Log(PlayerManager.instance.hp);
     	}
     }
 

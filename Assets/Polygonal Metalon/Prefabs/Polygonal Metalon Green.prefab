@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 7
-  MaxDist: 20
+  MaxDist: 25
   distance: 0
   MinDist: 3.5
   vocal: {fileID: 5247223417305885746}
