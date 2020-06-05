@@ -69,8 +69,8 @@ public class ElevatorController : MonoBehaviour
             inRange = true;
         }
         
-        dialogue.text = "hello";
-        if (EnemyManager.instance.numEnemies > 0) 
+        //dialogue.text = "hello";
+        if (EnemyManager.instance.numEnemies > 1) 
         {
             dialogue.text = "Defeat all Enemies to progress to the next level!";
         }

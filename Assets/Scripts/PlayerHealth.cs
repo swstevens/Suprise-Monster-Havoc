@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthbar;
 
     private string hubWorld;
+
+    public AudioSource hitSounds;
+    private float hitSoundsTimer = 0.5f;
 
     void Start()
     {
@@ -38,8 +41,14 @@ public class PlayerHealth : MonoBehaviour
     {
 	if (other.gameObject.CompareTag("enemy"))
         {
-            Debug.Log("Taking damage");
+            //Debug.Log("Taking damage");
+            hitSoundsTimer -= Time.deltaTime;
 
+            if (hitSoundsTimer <= 0.1f) {
+
+                hitSounds.Play();
+                hitSoundsTimer = 0.5f;
+            }
             //PlayerManager.instance.hp -= 1;
             PlayerManager.instance.hp -= 1;
             healthbar.value -= 1;

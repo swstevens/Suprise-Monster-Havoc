@@ -27,11 +27,6 @@ public class MediumLevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	if (easScore.activeSelf) {
-
-    		active = true;
-    		light.SetActive(true);
-    	}
 
         if (inRange)
         {

@@ -29,12 +29,6 @@ public class HardLevelLoader : MonoBehaviour
     void Update()
     {
 
-        if (medScore.activeSelf) {
-
-            active = true;
-            light.SetActive(true);
-        }
-
         if (inRange)
         {
             //player = PlayerManager.instance.player.transform;
