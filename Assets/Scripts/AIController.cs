@@ -15,12 +15,20 @@ public class AIController : MonoBehaviour {
     public float MinDist = 2f;
     private int damage;
 
+    //private bool moving;
+
+    Animator anim;
+    int moveHash = Animator.StringToHash ("Walk Forward");
+    int attackHash = Animator.StringToHash ("Stab Attack");
+
     void Start() 
     {
     	//agent = GetComponent<NavMeshAgent>();
     	target = PlayerManager.instance.player.transform;
     	EnemyManager.instance.numEnemies++;
     	damage = EnemyManager.instance.damage;
+    	anim = GetComponent<Animator>();
+
     }
  
     void Update() 
@@ -30,15 +38,21 @@ public class AIController : MonoBehaviour {
 
  		if (distance <= MinDist)
  		{
+
+ 			anim.ResetTrigger(moveHash);
+
+ 			anim.SetTrigger(attackHash);
+
  			Vector3 direction = (target.position - transform.position).normalized;
  			Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
 			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
 
 			// do an attack
- 		}
-        else if (distance <= MaxDist) {
+ 		} else if (distance <= MaxDist) {
  			//agent.SetDestination(target.position);
 			// need to figure out how to make navmeshes
+
+ 			anim.ResetTrigger(attackHash);
 
 			Vector3 direction = (target.position - transform.position).normalized;
 			Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -46,6 +60,11 @@ public class AIController : MonoBehaviour {
 
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 
+            anim.SetTrigger(moveHash);
+
+        } else {
+
+        	anim.ResetTrigger(moveHash);
         }
     }
 
@@ -53,7 +72,7 @@ public class AIController : MonoBehaviour {
     {
     	if (other.CompareTag("Player"))
     	{
-    		PlayerManager.instance.hp -= damage;
+    		PlayerManager.instance.hp -= 0;
     	}
     }
 

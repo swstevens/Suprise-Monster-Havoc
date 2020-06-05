@@ -1117,6 +1117,7 @@ GameObject:
   - component: {fileID: 8751303063093659853}
   - component: {fileID: 83493887752040170}
   - component: {fileID: 5673708500188337723}
+  - component: {fileID: 5870857000920566123}
   m_Layer: 0
   m_Name: Polygonal Metalon Green
   m_TagString: enemy
@@ -1196,7 +1197,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783563462218004}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1
   m_Height: 3.6339798
@@ -1217,7 +1218,7 @@ MonoBehaviour:
   MoveSpeed: 5
   MaxDist: 20
   distance: 0
-  MinDist: 2
+  MinDist: 3.5
 --- !u!54 &83493887752040170
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1256,6 +1257,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &5870857000920566123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783563462218004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1, z: 4}
+  m_Center: {x: 0, y: 1, z: 1}
 --- !u!1 &1804318802084684
 GameObject:
   m_ObjectHideFlags: 0
