@@ -59,7 +59,7 @@ public class ElevatorController : MonoBehaviour
                             TimeCounter.instance.level1_record = TimeCounter.instance.levelTime;
                         }
                     }
-                    TimeCounter.instance.currentLevel = 0;
+                    //TimeCounter.instance.currentLevel = 0;
     			}
     		}
     	}
@@ -78,6 +78,7 @@ public class ElevatorController : MonoBehaviour
 
 				teleportInitiated = false;
 				teleportTimer = 4;
+                TimeCounter.instance.currentLevel = 0;
 				SceneManager.LoadScene("hub_world");
 			}
     	}
