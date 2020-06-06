@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
             hitSoundsTimer -= Time.deltaTime;
 
             if (hitSoundsTimer <= 0.1f) {
-
                 hitSounds.Play();
                 hitSoundsTimer = 0.5f;
             }
@@ -55,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
             //hp = health;
 
             if (PlayerManager.instance.hp < 0) {
+            	TimeCounter.instance.currentLevel = 0;
                 SceneManager.LoadScene("hub_world");
             }
     	}
