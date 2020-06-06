@@ -49,14 +49,14 @@ public class ElevatorController : MonoBehaviour
                     {
                         if (TimeCounter.instance.levelTime < TimeCounter.instance.level2_record || TimeCounter.instance.level2_record == 0f)
                         {
-                            TimeCounter.instance.level1_record = TimeCounter.instance.levelTime;
+                            TimeCounter.instance.level2_record = TimeCounter.instance.levelTime;
                         }
                     }
                     else if (TimeCounter.instance.currentLevel == 3)
                     {
                         if (TimeCounter.instance.levelTime < TimeCounter.instance.level3_record || TimeCounter.instance.level3_record == 0f)
                         {
-                            TimeCounter.instance.level1_record = TimeCounter.instance.levelTime;
+                            TimeCounter.instance.level3_record = TimeCounter.instance.levelTime;
                         }
                     }
                     //TimeCounter.instance.currentLevel = 0;
