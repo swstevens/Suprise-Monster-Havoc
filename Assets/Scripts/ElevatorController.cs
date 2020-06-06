@@ -59,6 +59,7 @@ public class ElevatorController : MonoBehaviour
                             TimeCounter.instance.level1_record = TimeCounter.instance.levelTime;
                         }
                     }
+                    TimeCounter.instance.currentLevel = 0;
     			}
     		}
     	}

@@ -21,7 +21,14 @@ public class TimeCounter : MonoBehaviour
 
 	void Update()
 	{
-		timer.text = "Time: " + levelTime;
+		if (currentLevel == 0)
+		{
+			timer.text = "Level 1: " + level1_record + " | Level 2: " + level2_record + " | Level 3: " + level3_record;
+		}
+		else
+		{
+			timer.text = "Time: " + levelTime;
+		}
 	}
 
 }
