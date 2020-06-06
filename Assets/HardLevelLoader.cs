@@ -12,12 +12,6 @@ public class HardLevelLoader : MonoBehaviour
     public Transform player;
     public Text dialogue;
 
-    public GameObject easScore;
-    public GameObject medScore;
-    public GameObject harScore;
-
-    public GameObject light;
-
     // Start is called before the first frame update
     void Start()
     {

@@ -11,7 +11,11 @@ public class PauseMenu : MonoBehaviour {
 
 	void Start()
 	{
-		currentlevel = MapManager.instance.currentlevel;
+
+        if (SceneManager.GetActiveScene().name != "hub_world") {
+
+            currentlevel = MapManager.instance.currentlevel;
+        }
 	}
 
     void Update() {
