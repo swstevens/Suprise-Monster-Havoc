@@ -38,6 +38,27 @@ public class ElevatorController : MonoBehaviour
 
     				teleportInitiated = true;
     				teleportSound.Play();
+                    if (TimeCounter.instance.currentLevel == 1)
+                    {
+                        if (TimeCounter.instance.levelTime < TimeCounter.instance.level1_record || TimeCounter.instance.level1_record == 0f)
+                        {
+                            TimeCounter.instance.level1_record = TimeCounter.instance.levelTime;
+                        }
+                    }
+                    else if (TimeCounter.instance.currentLevel == 2)
+                    {
+                        if (TimeCounter.instance.levelTime < TimeCounter.instance.level2_record || TimeCounter.instance.level2_record == 0f)
+                        {
+                            TimeCounter.instance.level1_record = TimeCounter.instance.levelTime;
+                        }
+                    }
+                    else if (TimeCounter.instance.currentLevel == 3)
+                    {
+                        if (TimeCounter.instance.levelTime < TimeCounter.instance.level3_record || TimeCounter.instance.level3_record == 0f)
+                        {
+                            TimeCounter.instance.level1_record = TimeCounter.instance.levelTime;
+                        }
+                    }
     			}
     		}
     	}

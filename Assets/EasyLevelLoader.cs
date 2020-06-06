@@ -37,6 +37,7 @@ public class EasyLevelLoader : MonoBehaviour
                 {
 
                     //easScore.SetActive(true);
+                    TimeCounter.instance.currentLevel = 1;
 	            	SceneManager.LoadScene("easy_level");
                 }
             }

@@ -41,6 +41,7 @@ public class HardLevelLoader : MonoBehaviour
                 {
 
                     //harScore.SetActive(true);
+                    TimeCounter.instance.currentLevel = 3;
 	            	SceneManager.LoadScene("hard_level");
                 }
             }

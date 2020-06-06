@@ -40,6 +40,7 @@ public class MediumLevelLoader : MonoBehaviour
                 {
 
                 	//medScore.SetActive(true);
+                    TimeCounter.instance.currentLevel = 2;
 	            	SceneManager.LoadScene("medium_level");
                 }
             }
