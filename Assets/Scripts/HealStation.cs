@@ -46,7 +46,7 @@ public class HealStation : MonoBehaviour
 
             	} else {
 
-            		Debug.Log("Player has been healed");
+            		//Debug.Log("Player has been healed");
                     //healthbar.value+= 50;
 
                     PlayerManager.instance.hp += 50;
@@ -79,11 +79,11 @@ public class HealStation : MonoBehaviour
         {
             //Debug.Log("Player entered trigger");
             inRange = true;
-        }
 
-        if (active) 
-        {
-            dialogue.text = "Heal (E)";
+            if (active) {
+                
+                dialogue.text = "Heal (E)";
+            }
         }
     }
 

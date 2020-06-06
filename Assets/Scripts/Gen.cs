@@ -241,7 +241,7 @@ public class Gen : MonoBehaviour
         			// GameObject g = Instantiate(TileManager.instance.enemy);
            //  		g.transform.position = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
 					Vector3 vector = new Vector3(roomSize * s.x, 0f, roomSize * s.y);
-					Instantiate(TileManager.instance.enemy, vector, TileManager.instance.enemy.transform.rotation);
+ 					Instantiate(TileManager.instance.enemy, vector, TileManager.instance.enemy.transform.rotation);
         		}
         	}
         }

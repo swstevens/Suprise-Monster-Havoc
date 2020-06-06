@@ -828,7 +828,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   deathSound: {fileID: 8614793601588371909}
+  hitTimer: 0.5
   hit: 0
+  dieTimer: 1
+  dead: 0
 --- !u!136 &2301187254460303578
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -855,12 +858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb450425705df4946906b27df86070e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
+  MoveSpeed: 6
   MaxDist: 25
   distance: 0
   MinDist: 3.5
   vocal: {fileID: -663423149827010087}
-  hit: 0
+  damageCollider: {fileID: 7841623126322052474}
 --- !u!54 &-505501075070343963
 Rigidbody:
   m_ObjectHideFlags: 0

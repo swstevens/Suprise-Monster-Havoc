@@ -19,11 +19,14 @@ public class AIController : MonoBehaviour {
     private float vocalTimer = 2.0f;
     //private bool moving;
 
-    public bool hit;
+    private bool hit;
+    private bool dead;
 
     Animator anim;
     int moveHash = Animator.StringToHash ("Walk Forward");
     int attackHash = Animator.StringToHash ("Stab Attack");
+
+    public Component damageCollider;
 
     void Start() 
     {
@@ -37,12 +40,24 @@ public class AIController : MonoBehaviour {
  
     void Update() 
     {
- 
+
+        dead = gameObject.GetComponent<Target>().dead;
+        hit = gameObject.GetComponent<Target>().hit;
+
         //transform.LookAt(Player);
         distance = Vector3.Distance(target.position, transform.position);
 
- 		if (distance <= MinDist)
- 		{
+        if (dead == true) {
+
+            MoveSpeed = 0;
+            Destroy(damageCollider);
+
+        } else if (hit == true) {
+
+            anim.ResetTrigger(moveHash);
+            transform.position += transform.forward * 0 * Time.deltaTime;
+
+        } else if (distance <= MinDist) {
 
  			anim.ResetTrigger(moveHash);
 
@@ -57,23 +72,27 @@ public class AIController : MonoBehaviour {
  			//agent.SetDestination(target.position);
 			// need to figure out how to make navmeshes
 
- 			vocalTimer -= Time.deltaTime;
+            if (dead != true) {
 
- 			if (vocalTimer <= 1) {
+                vocalTimer -= Time.deltaTime;
 
- 				vocal.Play();
- 				vocalTimer = 2.0f;
- 			}
+                if (vocalTimer <= 1) {
+
+                    vocal.Play();
+                    vocalTimer = 2.0f;
+                }
+                
+                anim.ResetTrigger(attackHash);
+
+                anim.SetTrigger(moveHash);
+
+                Vector3 direction = (target.position - transform.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
+
+                transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             
- 			anim.ResetTrigger(attackHash);
-
- 			anim.SetTrigger(moveHash);
-
-			Vector3 direction = (target.position - transform.position).normalized;
-			Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-			transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
-
-            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+            } 
  
         } else {
 
@@ -85,8 +104,14 @@ public class AIController : MonoBehaviour {
     {
     	if (other.gameObject.CompareTag("Player"))
     	{
-    		PlayerManager.instance.hp -= 1;
-            //Debug.Log(PlayerManager.instance.hp);
+            if (dead != true) {
+
+                PlayerManager.instance.hp -= 1;
+                //Debug.Log(PlayerManager.instance.hp);
+            } else {
+
+                damage = 0;
+            }
     	}
     }
 

@@ -88,28 +88,31 @@ public class ElevatorController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered trigger");
+            //Debug.Log("Player entered trigger");
             inRange = true;
-        }
-        
-        //dialogue.text = "hello";
-        if (EnemyManager.instance.numEnemies > 1) 
-        {
-            dialogue.text = "Defeat all Enemies to progress to the next level!";
-        }
-        else if (EnemyManager.instance.numEnemies == 0)
-        {
-        	dialogue.text = "Press E to progress to the next level";
+
+            if (EnemyManager.instance.numEnemies > 1) 
+            {
+                dialogue.text = "Defeat all Enemies to progress to the next level!";
+            }
+            else if (EnemyManager.instance.numEnemies == 0)
+            {
+                dialogue.text = "Press E to progress to the next level";
+            }
         }
     }
 
     void OnTriggerExit(Collider other)
     {
+
+        inRange = false;
+        dialogue.text = "";
+
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player left trigger");
-            inRange = false;
-            dialogue.text = "";
+            //Debug.Log("Player left trigger");
+            //inRange = false;
+            //dialogue.text = "";
         }
     }
 }

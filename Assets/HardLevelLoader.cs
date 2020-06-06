@@ -28,7 +28,7 @@ public class HardLevelLoader : MonoBehaviour
             //player = PlayerManager.instance.player.transform;
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 toOther = player.position - transform.position;
-            Debug.Log(Vector3.Dot(forward,toOther));
+            //Debug.Log(Vector3.Dot(forward,toOther));
             if (Vector3.Dot(forward,toOther) < 5)
             {
                 if (Input.GetKeyDown(KeyCode.E) && active == true)

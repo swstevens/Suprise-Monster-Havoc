@@ -8,7 +8,11 @@ public class Target : MonoBehaviour
 	public float health;
 	public AudioSource deathSound;
 
+	public float hitTimer = 0.5f;
 	public bool hit;
+
+	public float dieTimer = 1.0f;
+	public bool dead;
 
     Animator anim;
 
@@ -19,25 +23,52 @@ public class Target : MonoBehaviour
 	{
 		health = EnemyManager.instance.enemyHP;
 		anim = GetComponent<Animator>();
+		dead = false;
+	}
+
+	void Update() {
+
+		if (dead == true) {
+
+			dieTimer -= Time.deltaTime;
+
+			if (dieTimer <= 0f ) {
+
+				EnemyManager.instance.numEnemies--;
+				Destroy(gameObject);
+			}
+
+		} else if (hit == true) {
+
+			hitTimer -= Time.deltaTime;
+
+			if (hitTimer <= 0f) {
+
+				anim.ResetTrigger(damageHash);
+				hit = false;
+			}
+		}
 	}
 
 	public void TakeDamage(float damage) {
 
 		hit = true;
-		
-		anim.ResetTrigger(damageHash);
 
 		health -= damage;
 
 		if (health <= 0f)
 		{
 
-			deathSound.Play();
-			Die();
+			if (dead != true) {
+
+				deathSound.Play();
+				Die();
+			}
 
 		} else {
 
 			anim.SetTrigger(damageHash);
+
 		}
 	}
 
@@ -45,7 +76,6 @@ public class Target : MonoBehaviour
 	{
 
 		anim.SetTrigger(dieHash);
-		EnemyManager.instance.numEnemies--;
-		Destroy(gameObject);
+		dead = true;
 	}
 }

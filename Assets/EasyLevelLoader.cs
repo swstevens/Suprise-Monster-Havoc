@@ -52,7 +52,7 @@ public class EasyLevelLoader : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered trigger");
+            //Debug.Log("Player entered trigger");
             inRange = true;
         }
         if (active) 
@@ -65,7 +65,7 @@ public class EasyLevelLoader : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player left trigger");
+            //Debug.Log("Player left trigger");
             inRange = false;
             dialogue.text = "";
         }
