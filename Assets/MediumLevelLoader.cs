@@ -11,12 +11,6 @@ public class MediumLevelLoader : MonoBehaviour
     public Transform player;
     public Text dialogue;
 
-    public GameObject easScore;
-    public GameObject medScore;
-    public GameObject harScore;
-
-    public GameObject light;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +27,7 @@ public class MediumLevelLoader : MonoBehaviour
             //player = PlayerManager.instance.player.transform;
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 toOther = player.position - transform.position;
-            Debug.Log(Vector3.Dot(forward,toOther));
+            //Debug.Log(Vector3.Dot(forward,toOther));
             if (Vector3.Dot(forward,toOther) < 5)
             {
                 if (Input.GetKeyDown(KeyCode.E) && active == true)
